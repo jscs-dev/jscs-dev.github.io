@@ -78,7 +78,8 @@ $(<span class="hljs-string">'#foo'</span>).click(<span class="hljs-function"><sp
 <li><code>_</code> (underscore.js)</li>
 <li><code>__filename</code> (node.js global)</li>
 <li><code>__dirname</code> (node.js global)</li>
-<li><code>super_</code> (node.js, used by <a href="http://nodejs.org/docs/latest/api/util.html#util_util_inherits_constructor_superconstructor"><code>util.inherits</code></a>)</li>
+<li><code>super_</code> (node.js, used by
+<a href="http://nodejs.org/docs/latest/api/util.html#util_util_inherits_constructor_superconstructor"><code>util.inherits</code></a>)</li>
 </ul>
 <p>Type: <code>Boolean</code> or <code>Object</code></p>
 <p>Values:</p>
@@ -480,7 +481,8 @@ foo({
 <p>Values:</p>
 <ul>
 <li><code>true</code> for strict mode</li>
-<li><code>&quot;allButReserved&quot;</code> allows ES3+ reserved words to remain quoted which is helpful when using this option with JSHint&#39;s <code>es3</code> flag.</li>
+<li><code>&quot;allButReserved&quot;</code> allows ES3+ reserved words to remain quoted which is helpful
+when using this option with JSHint&#39;s <code>es3</code> flag.</li>
 </ul>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowQuotedKeysInObjects"</span>: <span class="hljs-literal">true</span>
@@ -689,7 +691,8 @@ foo({
 <h3 id="disallowspacebeforepostfixunaryoperators">disallowSpaceBeforePostfixUnaryOperators</h3>
 <p>Requires sticking unary operators to the left.</p>
 <p>Type: <code>Array</code> or <code>Boolean</code></p>
-<p>Values: Array of quoted operators or <code>true</code> to disallow space before postfix for all unary operators (i.e. increment/decrement operators)</p>
+<p>Values: Array of quoted operators or <code>true</code> to disallow space before postfix for all unary operators
+(i.e. increment/decrement operators)</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpaceBeforePostfixUnaryOperators"</span>: [<span class="hljs-string">"++"</span>, <span class="hljs-string">"--"</span>]
 </code></pre>
@@ -715,7 +718,8 @@ foo({
 <h3 id="disallowspacesinanonymousfunctionexpression">disallowSpacesInAnonymousFunctionExpression</h3>
 <p>Disallows space before <code>()</code> or <code>{}</code> in anonymous function expressions.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpacesInAnonymousFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -752,7 +756,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="disallowspacesinconditionalexpression">disallowSpacesInConditionalExpression</h3>
 <p>Disallows space before and/or after <code>?</code> or <code>:</code> in conditional expressions.</p>
 <p>Type: <code>Object</code> or <code>Boolean</code></p>
-<p>Values: <code>&quot;afterTest&quot;</code>, <code>&quot;beforeConsequent&quot;</code>, <code>&quot;afterConsequent&quot;</code>, <code>&quot;beforeAlternate&quot;</code> as child properties, or <code>true</code> to set all properties to true. Child properties must be set to <code>true</code>. These token names correspond to:</p>
+<p>Values: <code>&quot;afterTest&quot;</code>, <code>&quot;beforeConsequent&quot;</code>, <code>&quot;afterConsequent&quot;</code>, <code>&quot;beforeAlternate&quot;</code> as child properties,
+or <code>true</code> to set all properties to true. Child properties must be set to <code>true</code>. These token names correspond to:</p>
 <pre><code>var a = b ? c : d;
          ^ ^ ^ ^
          | | | |
@@ -781,7 +786,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="disallowspacesinfunctiondeclaration">disallowSpacesInFunctionDeclaration</h3>
 <p>Disallows space before <code>()</code> or <code>{}</code> in function declarations.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpacesInFunctionDeclaration"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -796,9 +802,11 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span> <span class="hljs-params">()</span></span>{}
 </code></pre>
 <h3 id="disallowspacesinfunctionexpression">disallowSpacesInFunctionExpression</h3>
-<p>Disallows space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#disallowspacesinnamedfunctionexpression">named</a> and <a href="#disallowspacesinanonymousfunctionexpression">anonymous</a>).</p>
+<p>Disallows space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#disallowspacesinnamedfunctionexpression">named</a>
+and <a href="#disallowspacesinanonymousfunctionexpression">anonymous</a>).</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpacesInFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -815,9 +823,11 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 </code></pre>
 <h3 id="disallowspacesinfunction">disallowSpacesInFunction</h3>
 <p>Expression</p>
-<p>Disallows space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#disallowspacesinnamedfunctionexpression">named</a> and <a href="#disallowspacesinanonymousfunctionexpression">anonymous</a>).</p>
+<p>Disallows space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#disallowspacesinnamedfunctionexpression">named</a>
+and <a href="#disallowspacesinanonymousfunctionexpression">anonymous</a>).</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpacesInFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -835,7 +845,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="disallowspacesinnamedfunctionexpression">disallowSpacesInNamedFunctionExpression</h3>
 <p>Disallows space before <code>()</code> or <code>{}</code> in named function expressions.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"disallowSpacesInNamedFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1026,7 +1037,8 @@ $(<span class="hljs-string">'#foo'</span>).click(<span class="hljs-function"><sp
 <h3 id="requireblocksonnewline">requireBlocksOnNewline</h3>
 <p>Requires blocks to begin and end with a newline</p>
 <p>Type: <code>Boolean</code> or <code>Integer</code></p>
-<p>Values: <code>true</code> validates all non-empty blocks, <code>Integer</code> specifies a minimum number of statements in the block before validating.</p>
+<p>Values: <code>true</code> validates all non-empty blocks,
+<code>Integer</code> specifies a minimum number of statements in the block before validating.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireBlocksOnNewline"</span>: <span class="hljs-literal">true</span>
 </code></pre>
@@ -1456,7 +1468,8 @@ x = y ?
 <h3 id="requirepaddingnewlinesinblocks">requirePaddingNewlinesInBlocks</h3>
 <p>Requires blocks to begin and end with 2 newlines</p>
 <p>Type: <code>Boolean</code> or <code>Integer</code></p>
-<p>Values: <code>true</code> validates all non-empty blocks, <code>Integer</code> specifies a minimum number of statements in the block before validating.</p>
+<p>Values: <code>true</code> validates all non-empty blocks,
+<code>Integer</code> specifies a minimum number of statements in the block before validating.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requirePaddingNewlinesInBlocks"</span>: <span class="hljs-literal">true</span>
 </code></pre>
@@ -1737,7 +1750,8 @@ without comma operator, since it&#39;s rarely used with this rule</p>
 <h3 id="requirespacebeforepostfixunaryoperators">requireSpaceBeforePostfixUnaryOperators</h3>
 <p>Disallows sticking unary operators to the left.</p>
 <p>Type: <code>Array</code> or <code>Boolean</code></p>
-<p>Values: Array of quoted operators or <code>true</code> to require space before postfix for all unary operators (i.e. increment/decrement operators)</p>
+<p>Values: Array of quoted operators or <code>true</code> to require space before postfix for all unary operators
+(i.e. increment/decrement operators).</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpaceBeforePostfixUnaryOperators"</span>: [<span class="hljs-string">"++"</span>, <span class="hljs-string">"--"</span>]
 </code></pre>
@@ -1763,7 +1777,8 @@ without comma operator, since it&#39;s rarely used with this rule</p>
 <h3 id="requirespacesinanonymousfunctionexpression">requireSpacesInAnonymousFunctionExpression</h3>
 <p>Requires space before <code>()</code> or <code>{}</code> in anonymous function expressions.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInAnonymousFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1800,7 +1815,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="requirespacesinconditionalexpression">requireSpacesInConditionalExpression</h3>
 <p>Requires space before and/or after <code>?</code> or <code>:</code> in conditional expressions.</p>
 <p>Type: <code>Object</code> or <code>Boolean</code></p>
-<p>Values: <code>&quot;afterTest&quot;</code>, <code>&quot;beforeConsequent&quot;</code>, <code>&quot;afterConsequent&quot;</code>, <code>&quot;beforeAlternate&quot;</code> as child properties, or <code>true</code> to set all properties to <code>true</code>. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;afterTest&quot;</code>, <code>&quot;beforeConsequent&quot;</code>, <code>&quot;afterConsequent&quot;</code>, <code>&quot;beforeAlternate&quot;</code> as child properties,
+or <code>true</code> to set all properties to <code>true</code>. Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInConditionalExpression"</span>: {
     <span class="hljs-string">"afterTest"</span>: <span class="hljs-literal">true</span>,
@@ -1822,7 +1838,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="requirespacesinfunctiondeclaration">requireSpacesInFunctionDeclaration</h3>
 <p>Requires space before <code>()</code> or <code>{}</code> in function declarations.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInFunctionDeclaration"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1837,9 +1854,11 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span> <span class="hljs-params">()</span></span>{}
 </code></pre>
 <h3 id="requirespacesinfunctionexpression">requireSpacesInFunctionExpression</h3>
-<p>Requires space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#requirespacesinnamedfunctionexpression">named</a> and <a href="#requirespacesinanonymousfunctionexpression">anonymous</a>).</p>
+<p>Requires space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#requirespacesinnamedfunctionexpression">named</a>
+and <a href="#requirespacesinanonymousfunctionexpression">anonymous</a>).</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1856,9 +1875,11 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 </code></pre>
 <h3 id="requirespacesinfunction">requireSpacesInFunction</h3>
 <p>Expression</p>
-<p>Requires space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#requirespacesinnamedfunctionexpression">named</a> and <a href="#requirespacesinanonymousfunctionexpression">anonymous</a>).</p>
+<p>Requires space before <code>()</code> or <code>{}</code> in function expressions (both <a href="#requirespacesinnamedfunctionexpression">named</a>
+and <a href="#requirespacesinanonymousfunctionexpression">anonymous</a>).</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1876,7 +1897,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="requirespacesinnamedfunctionexpression">requireSpacesInNamedFunctionExpression</h3>
 <p>Requires space before <code>()</code> or <code>{}</code> in named function expressions.</p>
 <p>Type: <code>Object</code></p>
-<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties. Child properties must be set to <code>true</code>.</p>
+<p>Values: <code>&quot;beforeOpeningRoundBrace&quot;</code> and <code>&quot;beforeOpeningCurlyBrace&quot;</code> as child properties.
+Child properties must be set to <code>true</code>.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInNamedFunctionExpression"</span>: {
     <span class="hljs-string">"beforeOpeningRoundBrace"</span>: <span class="hljs-literal">true</span>,
@@ -1925,7 +1947,8 @@ array.map(<span class="hljs-function"><span class="hljs-keyword">function</span>
 <h3 id="requirespacesinsideparentheses">requireSpacesInsideParentheses</h3>
 <p>Requires space after opening round bracket and before closing.</p>
 <p>Type: <code>Object</code> or <code>String</code></p>
-<p>Values: <code>&quot;all&quot;</code> for strict mode, <code>&quot;allButNested&quot;</code> (<em>deprecated</em> use <code>&quot;except&quot;: [&#39;(&#39;, &#39;)&#39;]</code>) ignores nested brackets in a row, you could also specify token exceptions.</p>
+<p>Values: <code>&quot;all&quot;</code> for strict mode, <code>&quot;allButNested&quot;</code>
+(<em>deprecated</em> use <code>&quot;except&quot;: [&#39;(&#39;, &#39;)&#39;]</code>) ignores nested brackets in a row, you could also specify token exceptions.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireSpacesInsideParentheses"</span>: {
     <span class="hljs-string">"all"</span>: <span class="hljs-literal">true</span>,
