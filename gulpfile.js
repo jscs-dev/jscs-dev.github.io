@@ -5,7 +5,7 @@ var teamPage = require('./tools/team-page');
 var rulesPage = require('./tools/rules-page');
 var addJsDoc = require('./tools/add-jsdoc');
 
-gulp.task('build', ['about', 'overview', 'contributing', 'rules', 'team']);
+gulp.task('build', ['about', 'overview', 'contributing', 'rules', 'team', 'demo']);
 
 gulp.task('about', function() {
     return gulp.src('jscs/README.md')
@@ -37,6 +37,12 @@ gulp.task('rules', function() {
         .pipe(gulp.dest('result'));
 });
 
+gulp.task('demo', function() {
+    return gulp.src('')
+        .pipe(markdownPage('src/demo.jade', 'demo.html', {title: 'Demo'}))
+        .pipe(gulp.dest('result'));
+});
+
 gulp.task('add-jsdoc', function() {
     return gulp.src('jscs/lib/rules/*.js')
         .pipe(addJsDoc('jscs/README.md'))
@@ -50,8 +56,9 @@ gulp.task('checkout', shell.task([
     'LAST_TAG_REV=`git rev-list --tags --max-count=1`;' +
     'LAST_TAG=`git describe --tags "$LAST_TAG_REV"`;' +
     'git checkout "$LAST_TAG";' +
-    'if [ ! -f OVERVIEW.md ]; then git checkout master; fi',
-    'cd jscs; npm install'
+    'if [ ! -f OVERVIEW.md ]; then git checkout master && git pull; fi',
+    'cd jscs; npm install; npm run browserify;',
+    'cp jscs/jscs-browser.js result/assets/jscs-browser.js'
 ]));
 
 gulp.task('publish', ['build'], shell.task([
@@ -72,4 +79,5 @@ gulp.task('watch', ['build'], function() {
     gulp.watch(['src/**', 'jscs/CONTRIBUTING.md'], ['contributing']);
     gulp.watch(['src/**', 'jscs/package.json'], ['team']);
     gulp.watch(['src/**', 'jscs/lib/rules/*.js'], ['rules']);
+    gulp.watch(['src/**'], ['demo']);
 });

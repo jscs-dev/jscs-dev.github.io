@@ -1,0 +1,52 @@
+extends ./partials/template.jade
+block content
+  div.markdown !{markdownHtml}
+  div.demo
+    h1 Try JSCS
+    div.demo-info Paste your code, select preset and indentation to check for compliance
+    div.demo-options
+      dl
+        dt Preset
+        dd
+          select#demo-preset
+            option(value="airbnb") Airbnb
+            option(value="crockford") Crockford
+            option(value="google") Google
+            option(value="grunt") Grunt
+            option(value="jquery", selected) jQuery
+            option(value="mdcs") Mr.doob's Code Style™
+            option(value="wikimedia") Wikimedia
+            option(value="yandex") Yandex
+      dl
+        dt Indentation
+        dd
+          select#demo-indent
+            option(value="") Default
+            option(value="4") 4 spaces
+            option(value="2") 2 spaces
+            option(value="\t") Tabs
+    textarea#demo-input
+      | function quickSort(items, left, right) {
+      |     var index;
+      |     if (items.length > 1) {
+      |         left = typeof left != "number" ? 0 : left;
+      |         right = typeof right != "number" ? items.length-1 : right;
+      |         index = partition(items, left, right);
+      |         if (left < index-1) {
+      |             quickSort(items, left, index - 1);
+      |         }
+      |         if (index < right) {
+      |             quickSort(items, index, right);
+      |         }
+      |     }
+      |     return items;
+      | }
+      | // first call
+      | var result = quickSort(items);
+  link(rel="stylesheet", type="text/css", href="assets/codemirror/codemirror.css")
+  link(rel="stylesheet", type="text/css", href="assets/codemirror/lint.css")
+  script(src="assets/codemirror/codemirror.js", type="application/javascript")
+  script(src="assets/codemirror/javascript.js", type="application/javascript")
+  script(src="assets/codemirror/lint.js", type="application/javascript")
+  script(src="assets/jscs-browser.js", type="application/javascript")
+  script(src="assets/demo.js", type="application/javascript")

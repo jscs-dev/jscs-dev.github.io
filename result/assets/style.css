@@ -2,6 +2,7 @@ html, body {
     color: #333;
     font-family: "Frutiger", Helvetica, sans-serif;
     margin: 0;
+    height: 100%;
 }
 
 /* About page */
@@ -55,10 +56,35 @@ html, body {
     margin-bottom: 5px;
 }
 
+/* Demo */
+
+.demo-options dt, .demo-options dd {
+    vertical-align: middle;
+}
+
+.demo-options dl {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+.demo-options dl dt, .demo-options dl dd {
+    margin: 0;
+    display: inline-block;
+}
+
+.demo-options dl dd {
+    padding-left: 10px;
+}
+
 /* Layout */
+
+.layout {
+    min-height: 100%;
+}
 
 .content {
     overflow: hidden;
+    padding-bottom: 90px;
 }
 
 .header {
@@ -147,7 +173,7 @@ html, body {
 }
 
 .footer {
-    margin-top: 50px;
+    margin-top: -50px;
     background: #DEE2CC;
 }
 

@@ -1,4 +1,5 @@
 /result/*.html
+/result/assets/jscs-browser.js
 /node_modules
 /rules/*
 /publish
