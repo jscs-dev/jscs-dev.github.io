@@ -1,6 +1,5 @@
-<!DOCTYPE html><html><head><title>JSCS - Overview</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body><header class="header"><div class="header-top"><div class="header-top-content"><a href="/" class="logo"></a><ul class="header-top-nav"><li><a href="./index.html">About</a></li><li><a href="./overview.html">Overview</a></li><li><a href="./rules.html">Rules</a></li><li><a href="./contributing.html">Contributing</a></li><li><a href="./team.html">Team</a></li></ul></div></div><div class="header-bottom"><ul class="header-bottom-nav"><li><a href="https://groups.google.com/d/forum/jscs-dev" class="mailing-list">Mailing list</a></li><li><iframe src="http://ghbtns.com/github-btn.html?user=jscs-dev&repo=node-jscs&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li><li><a href="https://twitter.com/jscs_dev" class="twitter-follow-button" data-show-count="false">Follow @jscs_dev</a>
+<!DOCTYPE html><html><head><title>JSCS - Overview</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="shortcut icon" type="image/x-icon" href="favicon.ico"><link rel="stylesheet" type="text/css" href="assets/style.css"></head><body><div class="layout"><header class="header"><div class="header-top"><div class="header-top-content"><a href="/" class="logo"></a><ul class="header-top-nav"><li><a href="./index.html">About</a></li><li><a href="./demo.html">Demo</a></li><li><a href="./overview.html">Overview</a></li><li><a href="./rules.html">Rules</a></li><li><a href="./contributing.html">Contributing</a></li><li><a href="./team.html">Team</a></li></ul></div></div><div class="header-bottom"><ul class="header-bottom-nav"><li><a href="https://groups.google.com/d/forum/jscs-dev" class="mailing-list">Mailing list</a></li><li><iframe src="http://ghbtns.com/github-btn.html?user=jscs-dev&repo=node-jscs&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li><li><a href="https://twitter.com/jscs_dev" class="twitter-follow-button" data-show-count="false">Follow @jscs_dev</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></li></ul></div></header><div class="content"><div class="markdown"><div class="toc"><div class="toc-header">Table of contents:</div>
-
 <ul>
 <li><a href="#presets">Presets</a></li>
 <li><a href="#friendly-packages">Friendly packages</a></li>
@@ -11,8 +10,6 @@
 <li><a href="#versioning-semver">Versioning &amp; Semver</a></li>
 </ul>
 </div>
-
-
 <h2 id="presets">Presets</h2>
 <ul>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">Airbnb</a> — <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
@@ -21,7 +18,11 @@
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/grunt.json">Grunt</a> — <a href="http://gruntjs.com/contributing#syntax">http://gruntjs.com/contributing#syntax</a></li>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/jquery.json">jQuery</a> — <a href="https://contribute.jquery.org/style-guide/js/">https://contribute.jquery.org/style-guide/js/</a></li>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/mdcs.json">MDCS</a> — <a href="https://github.com/mrdoob/three.js/wiki/Mr.doob&#39;s-Code-Style%E2%84%A2">https://github.com/mrdoob/three.js/wiki/Mr.doob&#39;s-Code-Style™</a></li>
-<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wikimedia.json">Wikimedia</a> — <a href="https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript">https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/node-style-guide.json">node-style-guide</a> - <a href="https://github.com/felixge/node-style-guide">https://github.com/felixge/node-style-guide</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wikimedia.json">Wikimedia</a> — <a href="https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript">https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript</a><ul>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wordpress.json">Wordpress</a> — <a href="https://make.wordpress.org/core/handbook/coding-standards/javascript/">https://make.wordpress.org/core/handbook/coding-standards/javascript/</a></li>
+</ul>
+</li>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/yandex.json">Yandex</a> — <a href="https://github.com/yandex/codestyle/blob/master/javascript.md">https://github.com/yandex/codestyle/blob/master/javascript.md</a></li>
 </ul>
 <h2 id="friendly-packages">Friendly packages</h2>
@@ -48,6 +49,11 @@
 </code></pre><p>You can also pipe input into jscs:</p>
 <pre><code>cat myfile.js | jscs
 </code></pre><h2 id="cli">CLI</h2>
+<h3 id="-auto-configure-experimental-"><code>--auto-configure</code> (Experimental)</h3>
+<p>Presents a walkthrough that allows you to generate a JSCS configuration by
+choosing a preset and handling violated rules.</p>
+<pre><code>jscs --auto-configure path
+</code></pre><p><code>path</code> can be a file or directory to check the presets against</p>
 <h3 id="-config-"><code>--config</code></h3>
 <p>Allows to define path to the config file.</p>
 <pre><code>jscs path[ path[...]] --config=./.config.json
@@ -56,7 +62,7 @@
 <p>If defined will use predefined rules for specific code style.</p>
 <pre><code>jscs path[ path[...]] --preset=jquery
 </code></pre><h3 id="-reporter-"><code>--reporter</code></h3>
-<p><code>jscs</code> itself provides six reporters: <code>checkstyle</code>, <code>console</code>, <code>inline</code>, <code>junit</code> and <code>text</code>.</p>
+<p><code>jscs</code> itself provides six reporters: <code>checkstyle</code>, <code>console</code>, <code>inline</code>, <code>inlinesingle</code>, <code>junit</code> and <code>text</code>.</p>
 <pre><code>jscs path[ path[...]] --reporter=console
 </code></pre><p>But you also can specify your own reporter, since this flag accepts relative or absolute paths too.</p>
 <pre><code>jscs path[ path[...]] --reporter=./some-dir/my-reporter.js
@@ -135,6 +141,13 @@
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"esnext"</span>: <span class="hljs-literal">true</span>
 </code></pre>
+<h3 id="esprimaoptions">esprimaOptions</h3>
+<p>Custom <code>options</code> to be passed to <code>esprima.parse(code, options)</code></p>
+<p>Type: <code>Object</code></p>
+<p>Default: <code>{ &quot;tolerant&quot;: true }</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"esprimaOptions"</span>: { <span class="hljs-string">"tolerant"</span>: <span class="hljs-literal">true</span> }
+</code></pre>
 <h3 id="errorfilter">errorFilter</h3>
 <p>A filter function that determines whether or not to report an error.
 This will be called for every found error.</p>
@@ -202,4 +215,11 @@ This will be called for every found error.</p>
 </ul>
 </li>
 </ul>
-</div></div><footer class="footer"><div class="footer-main"><div class="footer-copyrights">&copy; 2015 JSCS</div></div></footer></body></html>
+</div></div></div><footer class="footer"><div class="footer-main"><div class="footer-copyrights">&copy; 2015 JSCS</div></div></footer><script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q || []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-58259239-1', 'auto');
+ga('send', 'pageview');
+</script></body></html>
