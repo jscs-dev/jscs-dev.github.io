@@ -11,6 +11,7 @@
 </ul>
 </div>
 <h2 id="presets">Presets</h2>
+<p>Note: the easiest way to use a preset is with the <a href="#preset">preset</a> option described below.</p>
 <ul>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">Airbnb</a> — <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/crockford.json">Crockford</a> — <a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a></li>
@@ -23,12 +24,19 @@
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wordpress.json">Wordpress</a> — <a href="https://make.wordpress.org/core/handbook/coding-standards/javascript/">https://make.wordpress.org/core/handbook/coding-standards/javascript/</a></li>
 <li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/yandex.json">Yandex</a> — <a href="https://github.com/yandex/codestyle/blob/master/javascript.md">https://github.com/yandex/codestyle/blob/master/javascript.md</a></li>
 </ul>
+<p>You can specifically disable any preset rule by creating a <code>.jscsrc</code> config file and assigning it to null, like so:</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
+    "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre>
 <h2 id="friendly-packages">Friendly packages</h2>
 <ul>
 <li>Atom plugin: <a href="https://atom.io/packages/linter-jscs">https://atom.io/packages/linter-jscs</a></li>
 <li>Brackets Extension: <a href="https://github.com/globexdesigns/brackets-jscs">https://github.com/globexdesigns/brackets-jscs</a></li>
 <li>Grunt task: <a href="https://github.com/jscs-dev/grunt-jscs/">https://github.com/jscs-dev/grunt-jscs/</a></li>
 <li>Gulp task: <a href="https://github.com/jscs-dev/gulp-jscs/">https://github.com/jscs-dev/gulp-jscs/</a></li>
+<li>Overcommit Git pre-commit hook manager: <a href="https://github.com/brigade/overcommit/">https://github.com/brigade/overcommit/</a></li>
 <li>SublimeText 3 Plugin: <a href="https://github.com/SublimeLinter/SublimeLinter-jscs/">https://github.com/SublimeLinter/SublimeLinter-jscs/</a></li>
 <li>Syntastic VIM Plugin: <a href="https://github.com/scrooloose/syntastic/blob/master/syntax_checkers/javascript/jscs.vim/">https://github.com/scrooloose/syntastic/.../syntax_checkers/javascript/jscs.vim/</a></li>
 <li>Web Essentials for Visual Studio 2013: <a href="https://github.com/madskristensen/WebEssentials2013/">https://github.com/madskristensen/WebEssentials2013/</a></li>
@@ -47,40 +55,45 @@
 </code></pre><p>You can also pipe input into jscs:</p>
 <pre><code>cat myfile.js | jscs
 </code></pre><h2 id="cli">CLI</h2>
-<h3 id="-auto-configure-experimental-"><code>--auto-configure</code> (Experimental)</h3>
+<p>Some CLI options can be put in your <code>.jscsrc</code> as well (such as <code>esnext</code>).</p>
+<h3 id="-fix-x-"><code>--fix</code> (<code>-x</code>)</h3>
+<p>Will apply fixes to all supported style rules. (Currently whitespace rules, <a href="http://jscs.info/rules.html#requirelinefeedatfileend">EOF rule</a>, and <a href="http://jscs.info/rules.html#validateindentation">validateIndentation</a>)</p>
+<pre><code>jscs path[ path[...]] --fix
+</code></pre><h3 id="-auto-configure-"><code>--auto-configure</code></h3>
 <p>Presents a walkthrough that allows you to generate a JSCS configuration by
 choosing a preset and handling violated rules.</p>
 <pre><code>jscs --auto-configure path
 </code></pre><p><code>path</code> can be a file or directory to check the presets against</p>
-<h3 id="-config-"><code>--config</code></h3>
+<h3 id="-config-c-"><code>--config</code> (<code>-c</code>)</h3>
 <p>Allows to define path to the config file.</p>
 <pre><code>jscs path[ path[...]] --config=./.config.json
 </code></pre><p>If there is no <code>--config</code> option specified, <code>jscs</code> it will consequentially search for <code>jscsConfig</code> option in <code>package.json</code> file then for <code>.jscsrc</code> (which is a just JSON with comments) and <code>.jscs.json</code> files in the current working directory then in nearest ancestor until it hits the system root.</p>
-<h3 id="-preset-"><code>--preset</code></h3>
+<h3 id="-preset-p-"><code>--preset</code> (<code>-p</code>)</h3>
 <p>If defined will use predefined rules for specific code style.</p>
 <pre><code>jscs path[ path[...]] --preset=jquery
-</code></pre><h3 id="-reporter-"><code>--reporter</code></h3>
+</code></pre><p>In order to add/remove preset rules you will need to create a <code>.jscsrc</code> config file.</p>
+<h3 id="-reporter-r-"><code>--reporter</code> (<code>-r</code>)</h3>
 <p><code>jscs</code> itself provides six reporters: <code>checkstyle</code>, <code>console</code>, <code>inline</code>, <code>inlinesingle</code>, <code>junit</code> and <code>text</code>.</p>
 <pre><code>jscs path[ path[...]] --reporter=console
 </code></pre><p>But you also can specify your own reporter, since this flag accepts relative or absolute paths too.</p>
 <pre><code>jscs path[ path[...]] --reporter=./some-dir/my-reporter.js
-</code></pre><h3 id="-esnext-"><code>--esnext</code></h3>
+</code></pre><h3 id="-esnext-e-"><code>--esnext</code> (<code>-e</code>)</h3>
 <p>Attempts to parse your code as ES6 using the harmony version of the esprima parser. Please note that this is currently experimental, and will improve over time.</p>
-<h3 id="-esprima-"><code>--esprima</code></h3>
+<h3 id="-esprima-s-"><code>--esprima</code> (<code>-s</code>)</h3>
 <p>Attempts to parse your code with a custom Esprima version.</p>
 <pre><code>jscs path[ path[...]] --esprima=esprima-fb
-</code></pre><h3 id="-error-filter-"><code>--error-filter</code></h3>
+</code></pre><h3 id="-error-filter-f-"><code>--error-filter</code> (<code>-f</code>)</h3>
 <p>The path to a module that determines whether or not an error should be reported.</p>
 <pre><code>jscs path[ path[...]] --error-filter=path/to/my/module.js
-</code></pre><h3 id="-no-colors-"><code>--no-colors</code></h3>
+</code></pre><h3 id="-no-colors-n-"><code>--no-colors</code> (<code>-n</code>)</h3>
 <p>Clean output without colors.</p>
-<h3 id="-max-errors-"><code>--max-errors</code></h3>
+<h3 id="-max-errors-m-"><code>--max-errors</code> (<code>-m</code>)</h3>
 <p>Set the maximum number of errors to report</p>
-<h3 id="-help-"><code>--help</code></h3>
+<h3 id="-help-h-"><code>--help</code> (<code>-h</code>)</h3>
 <p>Outputs usage information.</p>
-<h3 id="-verbose-"><code>--verbose</code></h3>
+<h3 id="-verbose-v-"><code>--verbose</code> (<code>-v</code>)</h3>
 <p>Prepends the name of the offending rule to all error messages.</p>
-<h3 id="-version-"><code>--version</code></h3>
+<h3 id="-version-v-"><code>--version</code> (<code>-V</code>)</h3>
 <p>Outputs version of <code>jscs</code>.</p>
 <h2 id="options">Options</h2>
 <h3 id="plugins">plugins</h3>
@@ -98,11 +111,11 @@ choosing a preset and handling violated rules.</p>
 <h3 id="preset">preset</h3>
 <p>Extends defined rules with preset rules.</p>
 <p>Type: <code>String</code></p>
-<p>Values: <code>&quot;airbnb&quot;</code>, <code>&quot;crockford&quot;</code>, <code>&quot;google&quot;</code>, <code>&quot;jquery&quot;</code>, <code>&quot;mdcs&quot;</code>, <code>&quot;wikimedia&quot;</code>, <code>&quot;yandex&quot;</code>, <code>&quot;wordpress&quot;</code>, <code>&quot;node-style-guide&quot;</code></p>
+<p>Values: <code>&quot;airbnb&quot;</code>, <code>&quot;crockford&quot;</code>, <code>&quot;google&quot;</code>, <code>&quot;jquery&quot;</code>, <code>&quot;mdcs&quot;</code>, <code>&quot;node-style-guide&quot;</code>, <code>&quot;wikimedia&quot;</code>, <code>wordpress</code>, <code>&quot;yandex&quot;</code></p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"preset"</span>: <span class="hljs-string">"jquery"</span>
 </code></pre>
-<p>If you want specifically disable preset rule assign it to <code>null</code>, like so:</p>
+<p>You can specifically disable any preset rule by assigning it to null, like so:</p>
 <pre><code class="lang-json">{
     "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
     "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
@@ -139,6 +152,13 @@ choosing a preset and handling violated rules.</p>
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"esnext"</span>: <span class="hljs-literal">true</span>
 </code></pre>
+<h3 id="verbose">verbose</h3>
+<p>Prepends the name of the offending rule to all error messages.</p>
+<p>Type: <code>Boolean</code></p>
+<p>Default: <code>false</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"verbose"</span>: <span class="hljs-literal">true</span>
+</code></pre>
 <h3 id="esprimaoptions">esprimaOptions</h3>
 <p>Custom <code>options</code> to be passed to <code>esprima.parse(code, options)</code></p>
 <p>Type: <code>Object</code></p>
@@ -155,8 +175,15 @@ This will be called for every found error.</p>
 </code></pre>
 <p>See <a href="https://github.com/jscs-dev/node-jscs/wiki/Error-Filters">how to define an error filter</a>.</p>
 <h2 id="error-suppression">Error Suppression</h2>
+<h3 id="disabling-a-rule">Disabling a Rule</h3>
+<p>You can specifically disable any rule by ommitting it from your <code>.jscsrc</code> config or by assigning it to null, like so:</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
+    "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre>
 <h3 id="inline-comments">Inline Comments</h3>
-<p>You can disable and reenable rules inline with two special comments: <code>// jscs:disable</code> and <code>// jscs:enable</code>. Spacing in these comments is fairly lenient. All of the following are equivalent:</p>
+<p>You can disable and re-enable rules inline with two special comments: <code>// jscs:disable</code> and <code>// jscs:enable</code>. Spacing in these comments is fairly lenient. All of the following are equivalent:</p>
 <pre><code class="lang-js"><span class="hljs-comment">/* jscs: enable */</span>
 <span class="hljs-comment">// jscs: enable</span>
 </code></pre>
@@ -176,13 +203,13 @@ This will be called for every found error.</p>
 <span class="hljs-comment">// jscs:enable requireCurlyBraces</span>
 <span class="hljs-keyword">if</span> (z) a(); <span class="hljs-comment">// all errors, including from requireCurlyBraces, on this line will be reported</span>
 </code></pre>
-<p>You can enable all rules after disabling a specific rule, and that rule becomes reenabled as well.</p>
+<p>You can enable all rules after disabling a specific rule, and that rule becomes re-enabled as well.</p>
 <pre><code class="lang-js"><span class="hljs-comment">// jscs:disable requireCurlyBraces</span>
 <span class="hljs-keyword">if</span> (x) y(); <span class="hljs-comment">// all errors from requireCurlyBraces on this line will be ignored</span>
 <span class="hljs-comment">// jscs:enable</span>
 <span class="hljs-keyword">if</span> (z) a(); <span class="hljs-comment">// all errors, even from requireCurlyBraces, will be reported</span>
 </code></pre>
-<p>You can disable multiple rules at once and progressively reenable them.</p>
+<p>You can disable multiple rules at once and progressively re-enable them.</p>
 <pre><code class="lang-js"><span class="hljs-comment">// jscs:disable requireCurlyBraces, requireDotNotation</span>
 <span class="hljs-keyword">if</span> (x[<span class="hljs-string">'a'</span>]) y(); <span class="hljs-comment">// all errors from requireCurlyBraces OR requireDotNotation on this line will be ignored</span>
 <span class="hljs-comment">// jscs:enable requireCurlyBraces</span>
