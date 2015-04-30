@@ -1500,31 +1500,34 @@ $(<span class="hljs-string">'#foo'</span>).click(<span class="hljs-function"><sp
 </code></pre><pre><code class="lang-js"><span class="hljs-string">"requireCapitalizedComments"</span>: { <span class="hljs-string">"allExcept"</span>: [<span class="hljs-string">"jshint"</span>] }
 </code></pre>
 <p>Valid:</p>
-<pre><code>function sayHello() {
-    \/* jshint: -W071 */
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> </span>{
+    \<span class="hljs-comment">/* jshint: -W071 */</span>
 
-    // I can now say hello in lots of statements, if I like.
-    return &quot;Hello&quot;;
+    <span class="hljs-comment">// I can now say hello in lots of statements, if I like.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello"</span>;
 }
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>Invalid:</li>
 </ul>
-<pre><code>function sayHello() {
-    \/* jshint: -W071 */
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> </span>{
+    \<span class="hljs-comment">/* jshint: -W071 */</span>
 
-    // i can now say hello in lots of statements, if I like.
-    return &quot;Hello&quot;;
+    <span class="hljs-comment">// i can now say hello in lots of statements, if I like.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello"</span>;
 }
-</code></pre><ul>
+</code></pre>
+<ul>
 <li>Invalid:</li>
 </ul>
-<pre><code>function sayHello() {
-    \/* istanbul ignore next */
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> </span>{
+    \<span class="hljs-comment">/* istanbul ignore next */</span>
 
-    // I&#39;d like to ignore this statement in coverage reports.
-    return &quot;Hello&quot;;
+    <span class="hljs-comment">// I'd like to ignore this statement in coverage reports.</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"Hello"</span>;
 }
-</code></pre><h3 id="requirecapitalizedconstructors">requireCapitalizedConstructors</h3>
+</code></pre>
+<h3 id="requirecapitalizedconstructors">requireCapitalizedConstructors</h3>
 <p>Requires constructors to be capitalized (except for <code>this</code>)</p>
 <p>Types: <code>Boolean</code> or <code>Object</code></p>
 <p>Values: <code>true</code> or Object with <code>allExcept</code> Array of quoted identifiers which are exempted</p>
@@ -1532,7 +1535,7 @@ $(<span class="hljs-string">'#foo'</span>).click(<span class="hljs-function"><sp
 <h4 id="example">Example</h4>
 <pre><code class="lang-js"><span class="hljs-string">"requireCapitalizedConstructors"</span>: <span class="hljs-literal">true</span>
 <span class="hljs-string">"requireCapitalizedConstructors"</span>: {
-    allExcept: [<span class="hljs-string">"somethingNative"</span>]
+    <span class="hljs-string">"allExcept"</span>: [<span class="hljs-string">"somethingNative"</span>]
 }
 </code></pre>
 <h5 id="valid">Valid</h5>
