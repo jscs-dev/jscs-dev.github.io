@@ -1,0 +1,258 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSCS - Overview</title>
+    <link rel="stylesheet" type="text/css" href="./assets/bundle.css" />
+</head>
+<body>
+    <div id="root">
+        <div class="app" data-reactid=".ag2py5z4sg" data-react-checksum="301984687"><div class="route-view" data-reactid=".ag2py5z4sg.0"></div><div class="route-view" data-reactid=".ag2py5z4sg.1"></div><div class="route-view" data-reactid=".ag2py5z4sg.2"></div><div class="route-view" data-reactid=".ag2py5z4sg.3"><div class="page" data-reactid=".ag2py5z4sg.3.0"><header class="header" data-reactid=".ag2py5z4sg.3.0.0"><div class="header__top" data-reactid=".ag2py5z4sg.3.0.0.0"><a href="./" data-reactid=".ag2py5z4sg.3.0.0.0.0"><div class="header__logo" data-reactid=".ag2py5z4sg.3.0.0.0.0.0"></div><div class="header__project" data-reactid=".ag2py5z4sg.3.0.0.0.0.1">JavaScript Code Style</div></a><div class="header__menu" data-reactid=".ag2py5z4sg.3.0.0.0.1"><menu class="menu_page" data-reactid=".ag2py5z4sg.3.0.0.0.1.0"><li class="menu_page__item  _active" data-reactid=".ag2py5z4sg.3.0.0.0.1.0.0"><a href="./overview.html" data-reactid=".ag2py5z4sg.3.0.0.0.1.0.0.0">Overview</a></li><li class="menu_page__item " data-reactid=".ag2py5z4sg.3.0.0.0.1.0.1"><a href="./rules.html" data-reactid=".ag2py5z4sg.3.0.0.0.1.0.1.0">Rules</a></li><li class="menu_page__item " data-reactid=".ag2py5z4sg.3.0.0.0.1.0.2"><a href="./contributing.html" data-reactid=".ag2py5z4sg.3.0.0.0.1.0.2.0">Contributing</a></li><li class="menu_page__item " data-reactid=".ag2py5z4sg.3.0.0.0.1.0.3"><a href="./changelog.html" data-reactid=".ag2py5z4sg.3.0.0.0.1.0.3.0">Changelog</a></li></menu></div></div><div class="header__bottom" data-reactid=".ag2py5z4sg.3.0.0.1"><ul class="social-buttons" data-reactid=".ag2py5z4sg.3.0.0.1.0"><li class="social-buttons__item" data-reactid=".ag2py5z4sg.3.0.0.1.0.0"><a href="https://groups.google.com/d/forum/jscs-dev" class="social-buttons__mailing-list" data-reactid=".ag2py5z4sg.3.0.0.1.0.0.0">Mailing list</a></li><li class="social-buttons__item" data-reactid=".ag2py5z4sg.3.0.0.1.0.1"><iframe src="http://platform.twitter.com/widgets/follow_button.html?screen_name=jscs_dev&amp;show_count=false&amp;show_screen_name=false" allowtransparency="true" frameborder="0" width="59" scrolling="no" height="20" data-reactid=".ag2py5z4sg.3.0.0.1.0.1.0"></iframe></li><li class="social-buttons__item" data-reactid=".ag2py5z4sg.3.0.0.1.0.2"><iframe src="http://ghbtns.com/github-btn.html?user=jscs-dev&amp;repo=node-jscs&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20" data-reactid=".ag2py5z4sg.3.0.0.1.0.2.0"></iframe></li></ul></div></header><div class="page__content" data-reactid=".ag2py5z4sg.3.0.1"><h1 class="title" data-reactid=".ag2py5z4sg.3.0.1.0">Overview</h1><div class="markdown" data-reactid=".ag2py5z4sg.3.0.1.1"><div class="toc"><div class="toc-header">Table of contents:</div>
+<ul>
+<li><a href="#presets">Presets</a></li>
+<li><a href="#friendly-packages">Friendly packages</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#cli">CLI</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#error-suppression">Error Suppression</a></li>
+<li><a href="#versioning-semver">Versioning &amp; Semver</a></li>
+</ul>
+</div>
+<h2 id="presets">Presets</h2>
+<p>Note: the easiest way to use a preset is with the <a href="#preset">preset</a> option described below.</p>
+<ul>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/airbnb.json">Airbnb</a> — <a href="https://github.com/airbnb/javascript">https://github.com/airbnb/javascript</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/crockford.json">Crockford</a> — <a href="http://javascript.crockford.com/code.html">http://javascript.crockford.com/code.html</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/google.json">Google</a> — <a href="https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml">https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/grunt.json">Grunt</a> — <a href="http://gruntjs.com/contributing#syntax">http://gruntjs.com/contributing#syntax</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/jquery.json">jQuery</a> — <a href="https://contribute.jquery.org/style-guide/js/">https://contribute.jquery.org/style-guide/js/</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/mdcs.json">MDCS</a> — <a href="https://github.com/mrdoob/three.js/wiki/Mr.doob&#39;s-Code-Style%E2%84%A2">https://github.com/mrdoob/three.js/wiki/Mr.doob&#39;s-Code-Style™</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/node-style-guide.json">node-style-guide</a> - <a href="https://github.com/felixge/node-style-guide">https://github.com/felixge/node-style-guide</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wikimedia.json">Wikimedia</a> — <a href="https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript">https://www.mediawiki.org/wiki/Manual:Coding_conventions/JavaScript</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/wordpress.json">Wordpress</a> — <a href="https://make.wordpress.org/core/handbook/coding-standards/javascript/">https://make.wordpress.org/core/handbook/coding-standards/javascript/</a></li>
+<li><a href="https://github.com/jscs-dev/node-jscs/blob/master/presets/yandex.json">Yandex</a> — <a href="https://github.com/yandex/codestyle/blob/master/javascript.md">https://github.com/yandex/codestyle/blob/master/javascript.md</a></li>
+</ul>
+<p>You can specifically disable any preset rule by creating a <code>.jscsrc</code> config file and assigning it to null, like so:</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
+    "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre>
+<h2 id="friendly-packages">Friendly packages</h2>
+<ul>
+<li>Atom plugin: <a href="https://atom.io/packages/linter-jscs">https://atom.io/packages/linter-jscs</a></li>
+<li>Brackets Extension: <a href="https://github.com/globexdesigns/brackets-jscs">https://github.com/globexdesigns/brackets-jscs</a></li>
+<li>Grunt task: <a href="https://github.com/jscs-dev/grunt-jscs/">https://github.com/jscs-dev/grunt-jscs/</a></li>
+<li>Gulp task: <a href="https://github.com/jscs-dev/gulp-jscs/">https://github.com/jscs-dev/gulp-jscs/</a></li>
+<li>Overcommit Git pre-commit hook manager: <a href="https://github.com/brigade/overcommit/">https://github.com/brigade/overcommit/</a></li>
+<li>SublimeText 3 Plugin: <a href="https://github.com/SublimeLinter/SublimeLinter-jscs/">https://github.com/SublimeLinter/SublimeLinter-jscs/</a></li>
+<li>Syntastic VIM Plugin: <a href="https://github.com/scrooloose/syntastic/blob/master/syntax_checkers/javascript/jscs.vim/">https://github.com/scrooloose/syntastic/.../syntax_checkers/javascript/jscs.vim/</a></li>
+<li>Web Essentials for Visual Studio 2013: <a href="https://github.com/madskristensen/WebEssentials2013/">https://github.com/madskristensen/WebEssentials2013/</a></li>
+<li>IntelliJ IDEA, RubyMine, WebStorm, PhpStorm, PyCharm plugin: <a href="https://github.com/idok/jscs-plugin">https://github.com/idok/jscs-plugin</a></li>
+</ul>
+<h3 id="extensions">Extensions</h3>
+<ul>
+<li>A TeamCity reporter: <a href="https://github.com/wurmr/jscs-teamcity-reporter">https://github.com/wurmr/jscs-teamcity-reporter</a></li>
+<li>JSDoc rules extension: <a href="https://github.com/jscs-dev/jscs-jsdoc">https://github.com/jscs-dev/jscs-jsdoc</a></li>
+</ul>
+<h2 id="installation">Installation</h2>
+<p><code>jscs</code> can be installed using <code>npm</code>:</p>
+<pre><code>npm install jscs -g
+</code></pre><p>To run <code>jscs</code>, you can use the following command from the project root:</p>
+<pre><code>jscs path[ path[...]]
+</code></pre><p>You can also pipe input into jscs:</p>
+<pre><code>cat myfile.js | jscs
+</code></pre><h2 id="cli">CLI</h2>
+<p>Some CLI options can be put in your <code>.jscsrc</code> as well (such as <code>esnext</code>).</p>
+<h3 id="-fix-x-"><code>--fix</code> (<code>-x</code>)</h3>
+<p>Will apply fixes to all supported style rules. (Currently whitespace rules, <a href="http://jscs.info/rules.html#requirelinefeedatfileend">EOF rule</a>, and <a href="http://jscs.info/rules.html#validateindentation">validateIndentation</a>)</p>
+<pre><code>jscs path[ path[...]] --fix
+</code></pre><h3 id="-auto-configure-"><code>--auto-configure</code></h3>
+<p>Presents a walkthrough that allows you to generate a JSCS configuration by
+choosing a preset and handling violated rules.</p>
+<pre><code>jscs --auto-configure path
+</code></pre><p><code>path</code> can be a file or directory to check the presets against</p>
+<h3 id="-config-c-"><code>--config</code> (<code>-c</code>)</h3>
+<p>Allows to define path to the config file.</p>
+<pre><code>jscs path[ path[...]] --config=./.config.json
+</code></pre><p>If there is no <code>--config</code> option specified, <code>jscs</code> it will consequentially search for <code>jscsConfig</code> option in <code>package.json</code> file then for <code>.jscsrc</code> (which is a just JSON with comments) and <code>.jscs.json</code> files in the current working directory then in nearest ancestor until it hits the system root.</p>
+<h3 id="-preset-p-"><code>--preset</code> (<code>-p</code>)</h3>
+<p>If defined will use predefined rules for specific code style.</p>
+<pre><code>jscs path[ path[...]] --preset=jquery
+</code></pre><p>In order to add/remove preset rules you will need to create a <code>.jscsrc</code> config file.</p>
+<h3 id="-reporter-r-"><code>--reporter</code> (<code>-r</code>)</h3>
+<p><code>jscs</code> itself provides six reporters: <code>checkstyle</code>, <code>console</code>, <code>inline</code>, <code>inlinesingle</code>, <code>junit</code> and <code>text</code>.</p>
+<pre><code>jscs path[ path[...]] --reporter=console
+</code></pre><p>But you also can specify your own reporter, since this flag accepts relative or absolute paths too.</p>
+<pre><code>jscs path[ path[...]] --reporter=./some-dir/my-reporter.js
+</code></pre><h3 id="-esnext-e-"><code>--esnext</code> (<code>-e</code>)</h3>
+<p>Attempts to parse your code as ES6 using the harmony version of the esprima parser. Please note that this is currently experimental, and will improve over time.</p>
+<h3 id="-esprima-s-"><code>--esprima</code> (<code>-s</code>)</h3>
+<p>Attempts to parse your code with a custom Esprima version.</p>
+<pre><code>jscs path[ path[...]] --esprima=esprima-fb
+</code></pre><h3 id="-error-filter-f-"><code>--error-filter</code> (<code>-f</code>)</h3>
+<p>The path to a module that determines whether or not an error should be reported.</p>
+<pre><code>jscs path[ path[...]] --error-filter=path/to/my/module.js
+</code></pre><h3 id="-no-colors-n-"><code>--no-colors</code> (<code>-n</code>)</h3>
+<p>Clean output without colors.</p>
+<h3 id="-max-errors-m-"><code>--max-errors</code> (<code>-m</code>)</h3>
+<p>Set the maximum number of errors to report</p>
+<h3 id="-help-h-"><code>--help</code> (<code>-h</code>)</h3>
+<p>Outputs usage information.</p>
+<h3 id="-verbose-v-"><code>--verbose</code> (<code>-v</code>)</h3>
+<p>Prepends the name of the offending rule to all error messages.</p>
+<h3 id="-version-v-"><code>--version</code> (<code>-V</code>)</h3>
+<p>Outputs version of <code>jscs</code>.</p>
+<h2 id="options">Options</h2>
+<h3 id="plugins">plugins</h3>
+<p>Paths to load plugins. See the wiki page for more details about the <a href="https://github.com/jscs-dev/node-jscs/wiki/Plugin-API">Plugin API</a></p>
+<p>Values: Array of NPM package names or paths</p>
+<pre><code class="lang-js"><span class="hljs-string">"plugins"</span>: [<span class="hljs-string">"jscs-plugin"</span>, <span class="hljs-string">"./lib/project-jscs-plugin"</span>]
+</code></pre>
+<h3 id="additionalrules">additionalRules</h3>
+<p>Path to load additional rules</p>
+<p>Type: <code>Array</code></p>
+<p>Values: Array of file matching patterns</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"additionalRules"</span>: [<span class="hljs-string">"project-rules/*.js"</span>]
+</code></pre>
+<h3 id="preset">preset</h3>
+<p>Extends defined rules with preset rules.</p>
+<p>Type: <code>String</code></p>
+<p>Values: <code>&quot;airbnb&quot;</code>, <code>&quot;crockford&quot;</code>, <code>&quot;google&quot;</code>, <code>&quot;jquery&quot;</code>, <code>&quot;mdcs&quot;</code>, <code>&quot;node-style-guide&quot;</code>, <code>&quot;wikimedia&quot;</code>, <code>wordpress</code>, <code>&quot;yandex&quot;</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"preset"</span>: <span class="hljs-string">"jquery"</span>
+</code></pre>
+<p>You can specifically disable any preset rule by assigning it to null, like so:</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
+    "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre>
+<h3 id="excludefiles">excludeFiles</h3>
+<p>Disables style checking for specified paths declared with glob patterns.</p>
+<p>Type: <code>Array</code></p>
+<p>Values: Array of file matching patterns</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"excludeFiles"</span>: [<span class="hljs-string">"node_modules/**"</span>, <span class="hljs-string">"src/!(bar|foo)"</span>]
+</code></pre>
+<h3 id="fileextensions">fileExtensions</h3>
+<p>Changes the set of file extensions that will be processed.</p>
+<p>Type: <code>Array</code> or <code>String</code> or <code>&quot;*&quot;</code></p>
+<p>Values: A single file extension or an Array of file extensions, beginning with a <code>.</code>. The matching is case <em>insensitive</em>. If <code>&quot;*&quot;</code> is provided, all files regardless of extension will match.</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"fileExtensions"</span>: [<span class="hljs-string">".js"</span>, <span class="hljs-string">".jsx"</span>]
+</code></pre>
+<h4 id="default">Default</h4>
+<pre><code class="lang-js"><span class="hljs-string">"fileExtensions"</span>: [<span class="hljs-string">".js"</span>]
+</code></pre>
+<h3 id="maxerrors">maxErrors</h3>
+<p>Set the maximum number of errors to report</p>
+<p>Type: <code>Number</code></p>
+<p>Default: Infinity</p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"maxErrors"</span>: <span class="hljs-number">10</span>
+</code></pre>
+<h3 id="esnext">esnext</h3>
+<p>Attempts to parse your code as ES6 using the harmony version of the esprima parser.</p>
+<p>Type: <code>Boolean</code></p>
+<p>Value: <code>true</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"esnext"</span>: <span class="hljs-literal">true</span>
+</code></pre>
+<h3 id="verbose">verbose</h3>
+<p>Prepends the name of the offending rule to all error messages.</p>
+<p>Type: <code>Boolean</code></p>
+<p>Default: <code>false</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"verbose"</span>: <span class="hljs-literal">true</span>
+</code></pre>
+<h3 id="esprimaoptions">esprimaOptions</h3>
+<p>Custom <code>options</code> to be passed to <code>esprima.parse(code, options)</code></p>
+<p>Type: <code>Object</code></p>
+<p>Default: <code>{ &quot;tolerant&quot;: true }</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"esprimaOptions"</span>: { <span class="hljs-string">"tolerant"</span>: <span class="hljs-literal">true</span> }
+</code></pre>
+<h3 id="errorfilter">errorFilter</h3>
+<p>A filter function that determines whether or not to report an error.
+This will be called for every found error.</p>
+<p>Type: <code>String</code></p>
+<h4 id="example">Example</h4>
+<pre><code class="lang-js"><span class="hljs-string">"errorFilter"</span>: <span class="hljs-string">"path/to/my/filter.js"</span>
+</code></pre>
+<p>See <a href="https://github.com/jscs-dev/node-jscs/wiki/Error-Filters">how to define an error filter</a>.</p>
+<h2 id="error-suppression">Error Suppression</h2>
+<h3 id="disabling-a-rule">Disabling a Rule</h3>
+<p>You can specifically disable any rule by ommitting it from your <code>.jscsrc</code> config or by assigning it to null, like so:</p>
+<pre><code class="lang-json">{
+    "<span class="hljs-attribute">preset</span>": <span class="hljs-value"><span class="hljs-string">"jquery"</span></span>,
+    "<span class="hljs-attribute">requireCurlyBraces</span>": <span class="hljs-value"><span class="hljs-literal">null</span>
+</span>}
+</code></pre>
+<h3 id="inline-comments">Inline Comments</h3>
+<p>You can disable and re-enable rules inline with two special comments: <code>// jscs:disable</code> and <code>// jscs:enable</code>. Spacing in these comments is fairly lenient. All of the following are equivalent:</p>
+<pre><code class="lang-js"><span class="hljs-comment">/* jscs: enable */</span>
+<span class="hljs-comment">// jscs: enable</span>
+</code></pre>
+<p>You can use them to disable rules in several ways.</p>
+<h4 id="disabling-all-rules">Disabling All Rules</h4>
+<p>Simply using <code>// jscs:disable</code> or <code>// jscs:enable</code> will disable all rules.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> a = b;
+<span class="hljs-comment">// jscs:disable</span>
+<span class="hljs-keyword">var</span> c = d; <span class="hljs-comment">// all errors on this line will be ignored</span>
+<span class="hljs-comment">// jscs:enable</span>
+<span class="hljs-keyword">var</span> e = f; <span class="hljs-comment">// all errors on this line will be reported</span>
+</code></pre>
+<h4 id="disabling-specific-rules">Disabling Specific Rules</h4>
+<p>Including a comma separated list of rules to modify after <code>// jscs:disable</code> or <code>// jscs:enable</code> will modify only those rules.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// jscs:disable requireCurlyBraces</span>
+<span class="hljs-keyword">if</span> (x) y(); <span class="hljs-comment">// all errors from requireCurlyBraces on this line will be ignored</span>
+<span class="hljs-comment">// jscs:enable requireCurlyBraces</span>
+<span class="hljs-keyword">if</span> (z) a(); <span class="hljs-comment">// all errors, including from requireCurlyBraces, on this line will be reported</span>
+</code></pre>
+<p>You can enable all rules after disabling a specific rule, and that rule becomes re-enabled as well.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// jscs:disable requireCurlyBraces</span>
+<span class="hljs-keyword">if</span> (x) y(); <span class="hljs-comment">// all errors from requireCurlyBraces on this line will be ignored</span>
+<span class="hljs-comment">// jscs:enable</span>
+<span class="hljs-keyword">if</span> (z) a(); <span class="hljs-comment">// all errors, even from requireCurlyBraces, will be reported</span>
+</code></pre>
+<p>You can disable multiple rules at once and progressively re-enable them.</p>
+<pre><code class="lang-js"><span class="hljs-comment">// jscs:disable requireCurlyBraces, requireDotNotation</span>
+<span class="hljs-keyword">if</span> (x[<span class="hljs-string">'a'</span>]) y(); <span class="hljs-comment">// all errors from requireCurlyBraces OR requireDotNotation on this line will be ignored</span>
+<span class="hljs-comment">// jscs:enable requireCurlyBraces</span>
+<span class="hljs-keyword">if</span> (z[<span class="hljs-string">'a'</span>]) a(); <span class="hljs-comment">// all errors from requireDotNotation, but not requireCurlyBraces, will be ignored</span>
+<span class="hljs-comment">// jscs:enable requireDotNotation</span>
+<span class="hljs-keyword">if</span> (z[<span class="hljs-string">'a'</span>]) a(); <span class="hljs-comment">// all errors will be reported</span>
+</code></pre>
+<h2 id="versioning-semver">Versioning &amp; Semver</h2>
+<p>We recommend installing JSCS via NPM using <code>^</code>, or <code>~</code> if you want more stable releases.</p>
+<p>Semver (<a href="http://semver.org/">http://semver.org/</a>) dictates that breaking changes be major version bumps. In the context of a linting tool, a bug fix that causes more errors to be reported can be interpreted as a breaking change. However, that would require major version bumps to occur more often than can be desirable. Therefore, as a compromise, we will only release bug fixes that cause more errors to be reported in minor versions.</p>
+<p>Below you fill find our versioning strategy, and what you can expect to come out of a new JSCS release.</p>
+<ul>
+<li>Patch release:<ul>
+<li>A bug fix in a rule that causes JSCS to report less errors.</li>
+<li>Docs, refactoring and other &quot;invisible&quot; changes for user;</li>
+</ul>
+</li>
+<li>Minor release:<ul>
+<li>Any preset changes.</li>
+<li>A bug fix in a rule that causes JSCS to report more errors.</li>
+<li>New rules or new options for existing rules that don&#39;t change existing behavior.</li>
+<li>Modifying rules so they report less errors, and don&#39;t cause build failures.</li>
+</ul>
+</li>
+<li>Major release:<ul>
+<li>Purposefully modifying existing rules so that they report more errors or change the meaning of a rule.</li>
+<li>Any architectural changes that could cause builds to fail.</li>
+</ul>
+</li>
+</ul>
+</div></div><footer class="footer" data-reactid=".ag2py5z4sg.3.0.2"><span class="footer__copyrights" data-reactid=".ag2py5z4sg.3.0.2.0"><span data-reactid=".ag2py5z4sg.3.0.2.0.0">© </span><span data-reactid=".ag2py5z4sg.3.0.2.0.1">2015</span><span data-reactid=".ag2py5z4sg.3.0.2.0.2"> JSCS</span></span><span class="footer__designer" data-reactid=".ag2py5z4sg.3.0.2.1">Design: Tasha Orbita</span></footer></div></div><div class="route-view" data-reactid=".ag2py5z4sg.4"></div><div class="route-view" data-reactid=".ag2py5z4sg.5"></div></div>
+    </div>
+    <script type="application/javascript">
+        window.__locationState = {"page":"overview","data":null};
+    </script>
+    <script type="application/javascript" src="./assets/data.js"></script>
+    <script type="application/javascript" src="./assets/bundle.js"></script>
+</body>
+</html>

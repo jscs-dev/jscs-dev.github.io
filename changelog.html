@@ -1,0 +1,932 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSCS - Changelog</title>
+    <link rel="stylesheet" type="text/css" href="./assets/bundle.css" />
+</head>
+<body>
+    <div id="root">
+        <div class="app" data-reactid=".155r1p49clc" data-react-checksum="-1050520101"><div class="route-view" data-reactid=".155r1p49clc.0"></div><div class="route-view" data-reactid=".155r1p49clc.1"></div><div class="route-view" data-reactid=".155r1p49clc.2"></div><div class="route-view" data-reactid=".155r1p49clc.3"></div><div class="route-view" data-reactid=".155r1p49clc.4"></div><div class="route-view" data-reactid=".155r1p49clc.5"><div class="page" data-reactid=".155r1p49clc.5.0"><header class="header" data-reactid=".155r1p49clc.5.0.0"><div class="header__top" data-reactid=".155r1p49clc.5.0.0.0"><a href="./" data-reactid=".155r1p49clc.5.0.0.0.0"><div class="header__logo" data-reactid=".155r1p49clc.5.0.0.0.0.0"></div><div class="header__project" data-reactid=".155r1p49clc.5.0.0.0.0.1">JavaScript Code Style</div></a><div class="header__menu" data-reactid=".155r1p49clc.5.0.0.0.1"><menu class="menu_page" data-reactid=".155r1p49clc.5.0.0.0.1.0"><li class="menu_page__item " data-reactid=".155r1p49clc.5.0.0.0.1.0.0"><a href="./overview.html" data-reactid=".155r1p49clc.5.0.0.0.1.0.0.0">Overview</a></li><li class="menu_page__item " data-reactid=".155r1p49clc.5.0.0.0.1.0.1"><a href="./rules.html" data-reactid=".155r1p49clc.5.0.0.0.1.0.1.0">Rules</a></li><li class="menu_page__item " data-reactid=".155r1p49clc.5.0.0.0.1.0.2"><a href="./contributing.html" data-reactid=".155r1p49clc.5.0.0.0.1.0.2.0">Contributing</a></li><li class="menu_page__item  _active" data-reactid=".155r1p49clc.5.0.0.0.1.0.3"><a href="./changelog.html" data-reactid=".155r1p49clc.5.0.0.0.1.0.3.0">Changelog</a></li></menu></div></div><div class="header__bottom" data-reactid=".155r1p49clc.5.0.0.1"><ul class="social-buttons" data-reactid=".155r1p49clc.5.0.0.1.0"><li class="social-buttons__item" data-reactid=".155r1p49clc.5.0.0.1.0.0"><a href="https://groups.google.com/d/forum/jscs-dev" class="social-buttons__mailing-list" data-reactid=".155r1p49clc.5.0.0.1.0.0.0">Mailing list</a></li><li class="social-buttons__item" data-reactid=".155r1p49clc.5.0.0.1.0.1"><iframe src="http://platform.twitter.com/widgets/follow_button.html?screen_name=jscs_dev&amp;show_count=false&amp;show_screen_name=false" allowtransparency="true" frameborder="0" width="59" scrolling="no" height="20" data-reactid=".155r1p49clc.5.0.0.1.0.1.0"></iframe></li><li class="social-buttons__item" data-reactid=".155r1p49clc.5.0.0.1.0.2"><iframe src="http://ghbtns.com/github-btn.html?user=jscs-dev&amp;repo=node-jscs&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20" data-reactid=".155r1p49clc.5.0.0.1.0.2.0"></iframe></li></ul></div></header><div class="page__content" data-reactid=".155r1p49clc.5.0.1"><h1 class="title" data-reactid=".155r1p49clc.5.0.1.0">Changelog</h1><div class="markdown" data-reactid=".155r1p49clc.5.0.1.1"><h2 id="version-1-13-1">Version 1.13.1</h2>
+<h3 id="overview">Overview</h3>
+<p>Small update for fix distribution of the <code>--esnext</code> CLI option (#1321)</p>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>CLI: use &quot;esnext&quot; cli option in the configuration module (Oleg Gaidarenko)</li>
+<li>CLI: ensure options to path.resolve are strings (Jason Karns)</li>
+<li>disallowMultipleSpaces: fix configuration error message (Marc Knaup)</li>
+</ul>
+<h3 id="docs">Docs</h3>
+<ul>
+<li>Docs: correct example for the &quot;requireCapitalizedComments&quot; rule (XhmikosR)</li>
+<li>Docs: Update mixup between rules in docstring example (Jérémie Astori)</li>
+<li>Docs: Fix missing quotes in a docstring example (Jérémie Astori)</li>
+</ul>
+<h2 id="version-1-13-0">Version 1.13.0</h2>
+<h3 id="overview">Overview</h3>
+<p>This is mostly an incremental update, which includes important fixes for annoyances like <code>npm ERR! EEXIST, symlink</code> error at <code>npm install</code>. We also improved ES6 support, added seven new rules, three new rule values and now you can declare <code>verbose</code> option at the config.</p>
+<p>There are no preset updates in this release, but if you feel that rules are missing in
+the supported <a href="http://jscs.info/overview.html#presets">presets</a> - please send us a PR.</p>
+<p>We eagerly wait for the Esprima 2.3 release, since soon after, <code>esnext</code> option will be set to <code>true</code> by default.</p>
+<p>We would like specifically thanks @TheSavior and @hzoo for their hard work on this release.</p>
+<h3 id="new-options">New options</h3>
+<ul>
+<li>New option: add &quot;verbose&quot; option as a config option (Oleg Gaidarenko)</li>
+</ul>
+<h3 id="new-rules">New rules</h3>
+<ul>
+<li>New rule: validateAlignedFunctionParameters (Bram Cordie)</li>
+<li>New rule: (disallow|require)PaddingNewLinesBeforeExport (Eli White)</li>
+<li>New rule: validateNewlineAfterArrayElements (Alexej Yaroshevich)</li>
+<li>New rule: (require |disallow)NamedUnassignedFunctions (Todd Wolfson)</li>
+<li>New rule: maximumNumberOfLines (Henry Zhu)</li>
+<li>New rule: (disallow|require)PaddingNewLinesAfterUseStrict (Eli White)</li>
+<li>New rule: disallowNotOperatorsInConditionals (Henry Zhu)</li>
+</ul>
+<h3 id="new-rule-values">New rule values</h3>
+<ul>
+<li>requirePaddingNewLinesAfterBlocks: add exceptions (Eli White)</li>
+<li>requireSpaceBeforeBlockStatements: add number of spaces argument (Oleg Pesok)</li>
+<li>requireDollarBeforejQueryAssignment: add &quot;ignoreProperties&quot; rule value (Alexej Yaroshevich)</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>paddingNewLinesBeforeLineComments: code and comment on the same line (Oleg Gaidarenko)</li>
+<li>disallowKeywordsOnNewLine: &quot;do..while&quot; on new line (oredi)</li>
+<li>requirePaddingNewLinesBeforeLineComments: first token and not first line (Eli White)</li>
+<li>Errors: should not show rule for &quot;Unsupported rule&quot; error (Oleg Gaidarenko)</li>
+<li>requireOperatorBeforeLineBreak: autofix by moving operator (Nick Santos)</li>
+<li>disallowIdentifierNames: fix errors with using object properties as an identifier (Henry Zhu)</li>
+<li>requireDollarBeforejQueryAssignment: Allow leading underscores before $ sign (Eli White)</li>
+<li>requireCamelCaseOrUpperCaseIdentifiers: skip es5 getters if ignoreProperties is set (Alexej Yaroshevich)</li>
+<li>requireSemicolons: fix warning positions (Roman Dvornov)</li>
+<li>requireMultipleVarDecl: fix switch statement case (Todd Wolfson)</li>
+<li>paddingNewLineAfterVariableDeclaration: simlification and more tests (Oleg Gaidarenko)</li>
+<li>paddingNewLineAfterVariableDeclaration: add check for let and const (Martin Kolárik)</li>
+<li>paddingNewLineAfterVariableDeclaration: do not trip off on the semicolon (Oleg Gaidarenko)</li>
+<li>paddingNewLinesAfterBlocks: ease up on function calls (Oleg Gaidarenko)</li>
+<li>requirePaddingNewLineAfterVariableDeclaration: allow exception (Henry Zhu)</li>
+<li>requireLineBreakAfterVariableAssignment: add check for let and const (Henry Zhu)</li>
+<li>requireCapitalizedComments: handle textblocks correctly (Martin Kolárik)</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>js-file: small JSDoc improvement (Oleg Gaidarenko)</li>
+<li>Tests: fix node-style-guide preset (Martin Kolárik)</li>
+<li>Utils: add &quot;true&quot; and &quot;false&quot; to list of reserved words (Dmitry Sorin)</li>
+<li>Update esprima-harmony version (Oleg Gaidarenko)</li>
+<li>Tests: Add a test helper for asserting errors and autofix (Eli White)</li>
+<li>disallowKeywordsOnNewLine: make jshint happy (Oleg Gaidarenko)</li>
+<li>disallowMultipleVarDecl: add test for var inside switch clause (Alexej Yaroshevich)</li>
+<li>errors: additional tests, coverage (Alexej Yaroshevich)</li>
+<li>string-checker: wrap rule.check into try-catch (Alexej Yaroshevich)</li>
+<li>errors: fix test flow with filtering (Alexej Yaroshevich)</li>
+</ul>
+<h3 id="docs">Docs</h3>
+<ul>
+<li>Docs: add link to overcommit under &quot;Friendly packages&quot; (Joe Lencioni)</li>
+<li>Docs: add a message to mention the verbose option (Henry Zhu)</li>
+<li>Docs: clarify that CLI options can be used in the config (Henry Zhu)</li>
+<li>Docs: clarify that disallowMultipleSpaces matches tabs and spaces (Henry Zhu)</li>
+<li>Docs: clarify how to disable a rule and use a config file (Henry Zhu)</li>
+<li>Docs: Clarify behavior of requireCamelCaseOrUpperCaseIdentifiers (Henry Zhu)</li>
+<li>Docs: fix disallowMultipleSpaces rule name in CHANGELOG (Alexej Yaroshevich)</li>
+<li>Docs: add two new presets to list of preset values (Jed Wood)</li>
+<li>Docs: add link to the preset option from the list of presets (Steve Lee)</li>
+<li>Docs: add shorten flags to cli (Henry Zhu)</li>
+<li>Docs: add auto fix option to cli docs (Henry Zhu)</li>
+<li>Docs: fix disallowMultipleSpaces invalid example (Henry Zhu)</li>
+<li>Docs: fix various docs typos (Eli White)</li>
+</ul>
+<h2 id="version-1-12-0">Version 1.12.0</h2>
+<h3 id="overview">Overview</h3>
+<p>Ladies and Gentlemen... Elvis is in the building - auto-fixing is finally here! We were working really hard to make this powerful new feature, and to make it right. We&#39;re hoping it will truly help make your code look good.</p>
+<p>Auto-fixing supports the <a href="http://jscs.info/rules.html#requirelinefeedatfileend">EOF rule</a> and all rules related to spacing, including <a href="http://jscs.info/rules.html#validateindentation">validateIndentation</a> which is the most complicated rule we have (big thanks to @mikesherov for making that happen). </p>
+<p>Although this chunk of rules covers most of the popular use-cases, we&#39;re determine to add more rules to this list, please help us out and report any bugs or consider contributing with some code - <a href="http://jscs.info/contributing.html">http://jscs.info/contributing.html</a>. We&#39;re really friendly to every new contributor.</p>
+<p>Apart from auto-fixing, there are six new rules – fresh out of the oven. Special thanks goes to @lahmatiy, who had the patience and perseverance to implement <a href="http://jscs.info/rules.html#requiresemicolons"><code>requireSemicolons</code></a>.</p>
+<p>Because of tireless efforts of @hzoo, we&#39;re adding two new presets in this release - <a href="https://github.com/felixge/node-style-guide"><code>node-style-guide</code></a> and <a href="https://make.wordpress.org/core/handbook/coding-standards/javascript"><code>wordpress</code></a>. They have pretty consistent style guides... try it out; They are a breeze to work with.</p>
+<p>We&#39;re very grateful to everyone who helped out with this release, especially to @TheSavior who helped review the pull requests and shape out our API.</p>
+<h3 id="preset-updates">Preset updates</h3>
+<ul>
+<li>Preset: remove &quot;requireMultipleVarDecl&quot; rule from jquery preset (Oleg Gaidarenko)</li>
+<li>Preset: wordpress (Henry Zhu)</li>
+<li>Preset: Add &quot;requireSemicolons&quot; rule to the Yandex preset (ikokostya)</li>
+<li>Preset: Add validate indentation rule for Yandex (Gunnar Lium)</li>
+<li>Preset: node-style-guide (Henry Zhu)</li>
+<li>Preset: update airbnb preset (Eli White)</li>
+<li>Preset: require blank line before all line comments for jQuery preset (Eli White)</li>
+<li>Preset: Add &quot;requireSpaceBeforeObjectValues&quot; to crockford test (Jackson Ray Hamilton)</li>
+</ul>
+<h3 id="auto-fixing">Auto-fixing</h3>
+<ul>
+<li>validateIndentation: autofixing! (Mike Sherov)</li>
+<li>TokenAssert: only fix lines when comments do not exist between tokens (Mike Sherov)</li>
+<li>disallowMultipleLineString: do not yet allow autofixing, which is a non-whitespace change (Mike Sherov)</li>
+<li>disallowSemicolons: do not yet allow autofixing, which is a non-whitespace change (Mike Sherov)</li>
+<li>Autofixing: add more rules to use assertion framework (Henry Zhu)</li>
+<li>Autofixing: make most rules use assertion framework when possible (Eli White)</li>
+<li>Autofixing: initial implementation (mdevils)</li>
+<li>Autofixing: token data (mdevils)</li>
+</ul>
+<h3 id="new-rules">New rules</h3>
+<ul>
+<li>New Rule: requireSemicolons (Roman Dvornov)</li>
+<li>New Rule: disallowMultipleSpaces (Todd Wolfson)</li>
+<li>New Rule: disallowIdentifierNames (alawatthe)</li>
+<li>New Rule: requirePaddingNewLineAfterVariableDeclaration (Evan Jacobs)</li>
+<li>New Rule: requireDollarBeforejQueryAssignment (Eli White)</li>
+<li>New Rules: (disallow/require)PaddingNewLinesBeforeLineComments (Eli White)</li>
+</ul>
+<h3 id="rule-values">Rule Values</h3>
+<ul>
+<li>requireCapitalizedComments: Add <code>allExcept</code> option (Ash Clarke)</li>
+</ul>
+<h3 id="auto-configuration">Auto-configuration</h3>
+<ul>
+<li>Auto-Configuration: show error count when handling violated rules (fubu)</li>
+<li>Auto-Configuration: show number of violated rules (fubu)</li>
+</ul>
+<h3 id="cli">CLI</h3>
+<ul>
+<li>CLI: simplify and increase coverage of &quot;cli-config&quot; module (Oleg Gaidarenko)</li>
+<li>CLI: increase coverage of the &quot;cli&quot; module (Oleg Gaidarenko)</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<ul>
+<li>(require|disallow)spacesIn*: add more invalid examples and fixes for rules (Henry Zhu)</li>
+<li>disallowSpacesInsideArrayBrackets: fix error messages (Henry Zhu)</li>
+<li>requireSpacesInsideArrayBrackets: comments should be also taken into account (gero3)</li>
+<li>disallowSpaceBeforeBinaryOperators: comments are allowed (gero3)</li>
+<li>requireLineBreakAfterVariableAssignment: allow exception for init part of for loop (Henry Zhu)</li>
+<li>(require|disallow)SpacesInsideArrayBrackets: use includeComments in token (Henry Zhu)</li>
+<li>disallowAnonymousFunctions: remove errant &quot;s&quot; from error message (James Chin)</li>
+<li>disallowDanglingUnderscores: Corrected rule name in assert message (Oswald Maskens)</li>
+<li>Parsing: Extend estraverse rules to support both XJS and JSX (Henry Zhu)</li>
+<li>(disallow/require)PaddingNewLinesAfterBlocks: Ignoring the end of files (Eli White)</li>
+<li>requirePaddingNewLinesBeforeLineComments: Allow consecutive comments and firstAfterCurly exception (Eli White)</li>
+</ul>
+<h3 id="misc">Misc</h3>
+<ul>
+<li>disallowSpacesInsideParentheses: fix es6 template literal token issues (Mike Sherov)</li>
+<li>RequireAlignedObjectValues: use assertions (Mike Sherov)</li>
+<li>DisallowMultipleLineBreaks: use assertions (Mike Sherov)</li>
+<li>Tests: Move to spec folder (Joel Kemp)</li>
+<li>Tests: Adding some more fix tests (Eli White)</li>
+<li>Tests: move specs into a subdir so that tests, fixtures, and utilities aren&#39;t intermingled (Mike Sherov)</li>
+<li>Misc: update dependencies (Oleg Gaidarenko)</li>
+<li>JsFile: Make getTokens include comments (Eli White)</li>
+<li>Assertions: Add fixing tests to several rules (Eli White)</li>
+<li>Assertions: add tests for linesBetween (Mike Sherov)</li>
+<li>Assertions: Make sure newlines get fixed (gero3)</li>
+<li>TokenAssert: remove newline fixing logic duplication to prepare for further fixes (Mike Sherov)</li>
+<li>TokenAssert: simplify and strengthen linesBetween rules (Mike Sherov)</li>
+<li>Token Assert: normalize whiteSpace assertions to match line assertions (Mike Sherov)</li>
+<li>requireLineFeedAtFileEnd: make use of assert (gero3)</li>
+<li>Don&#39;t trim whitespace in markdown-files (Simen Bekkhus)</li>
+<li>Cleanup: use this.getOptionName() for consistency, options variable (Henry Zhu)</li>
+<li>Cleanup: use iterateTokensByTypeAndValue where appropriate (Mike Sherov)</li>
+<li>Cleanup: remove archaic functions from JsFile (Mike Sherov)</li>
+<li>Cleanup: remove usage of getComment(After|Before)Token (Mike Sherov)</li>
+<li>Cleanup: remove redundant boolean check, use consistent error messages (Henry Zhu)</li>
+<li>Cleanup: use iterateTokensByTypeAndValue and this.getOptionName() (Henry Zhu)</li>
+<li>requireSpaceAfterKeywords: use token assert (Henry Zhu)</li>
+<li>JsFile::getFirstTokenOnLine implementation (for indentation rules) (mdevils)</li>
+<li>Replaces the &#39;colors&#39; and &#39;supports-colors&#39; packages with &#39;chalk&#39;. (Joshua Appelman)</li>
+<li>Fix various doc typos (Jérémie Astori)</li>
+<li>requirePaddingNewLinesAfterBlockDeclarations / disallowPaddingNewLinesAfterBlockDeclarations Adding an option to specify lines for errors.assert.differentLine (Eli White)</li>
+<li>JsFile: add getLineBreaks function to support future whitespace fixes (Mike Sherov)</li>
+<li>Appveyor: freeze node version to 0.12.x (Alexej Yaroshevich)</li>
+<li>requireCapitalizedComments: automatically except <code>jscs</code> comments (James Reggio)</li>
+</ul>
+<h3 id="docs">Docs</h3>
+<ul>
+<li>Docs: Change &quot;Values&quot; and &quot;Types&quot; to grammatically correct forms (Shmavon Gazanchyan)</li>
+<li>Docs: add reporter (sanemat)</li>
+<li>Docs: less.js uses jscs (Bass Jobsen)</li>
+<li>Docs: added Goodvidio to the list of adopters (Adonis K)</li>
+<li>Fix types and descriptions in documentation (Shmavon Gazanchyan)</li>
+</ul>
+<h2 id="version-1-11-3">Version 1.11.3</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>JsFile: ensure getLinesWithCommentsRemoved does not alter future getComments calls. (Mike Sherov)</li>
+</ul>
+<h3 id="misc-">Misc.</h3>
+<ul>
+<li>modules/utils normalizePath: fixed test for windows env (Alexej Yaroshevich)</li>
+</ul>
+<h2 id="version-1-11-2">Version 1.11.2</h2>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>validateIndentation: ignore empty module bodies (Mike Sherov)</li>
+<li>Object rules: ignore ES5 getters/setters when appropriate. (Mike Sherov)</li>
+<li>Ensure esprimaOptions is not mistaken for a rule (Yannick Croissant)</li>
+</ul>
+<h3 id="infrastructure-changes">Infrastructure Changes</h3>
+<ul>
+<li>CI: Add AppVeyor (Adeel)</li>
+</ul>
+<h3 id="misc-">Misc.</h3>
+<ul>
+<li>Add @zxqfox to the list of maintainers (mdevils)</li>
+</ul>
+<h2 id="version-1-11-1">Version 1.11.1</h2>
+<h3 id="new-rules-rule-values">New Rules / Rule Values</h3>
+<ul>
+<li>disallowSpaceAfterObjectKeys: implement ignoreSingleLine and ignoreMultiLine options (Henry Zhu)</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>disallowAllowSpacesInsideParentheses: reintroduce archaic &quot;all&quot; config option (Mike Sherov)</li>
+<li>requireSpaceBetweenArguments: loosen rule restriction (Mike Sherov)</li>
+<li>Object Key rules: ignore method syntax (Alexej Yaroshevich)</li>
+<li>(require|disallow)TrailingComma: fixed error location (Alexej Yaroshevich)</li>
+</ul>
+<h3 id="infrastructure-changes">Infrastructure Changes</h3>
+<ul>
+<li>Auto-generate: Move promisify to utils (Joel Kemp)</li>
+</ul>
+<h3 id="misc-">Misc.</h3>
+<ul>
+<li>JSHint: add unused true (Mike Sherov)</li>
+<li>Updating rules to use File Traversal APIs. (Eli White)</li>
+<li>Docs: Add website rebuild instructions to maintenance (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-11-0">Version 1.11.0</h2>
+<h3 id="preset-updates">Preset Updates</h3>
+<ul>
+<li>Preset: add &quot;requireSpaceBetweenArguments&quot; rule to all presets (Oleg Gaidarenko)</li>
+<li>Presets: Remove use of outdated validateJSDoc rule (Joel Kemp)</li>
+<li>Preset: Add &quot;requireSpacesInsideParentheses&quot; to jquery preset (Oleg Gaidarenko)</li>
+<li>Preset: switch multipleVarDecl rule in airbnb preset (Martin Bohal)</li>
+<li>Preset: change value of &quot;requireDotNotation&quot; rule for jquery preset (Oleg Gaidarenko)</li>
+</ul>
+<h3 id="new-config-options">New Config Options</h3>
+<ul>
+<li>Configuration: Auto-generation (Joel Kemp)</li>
+<li>Config: Add support for custom Esprima options. (Chris Rebert)</li>
+</ul>
+<h3 id="new-rules-rule-values">New Rules / Rule Values</h3>
+<ul>
+<li>New Rule: disallowKeywordsInComments (Joe Sepi)</li>
+<li>New Rules: (require|disallow)SpacesInsideBrackets (Mike Sherov)</li>
+<li>validateIndentation: new rule value - includeEmptyLines (Jonathan Gawrych)</li>
+<li>disallowTrailingWhitespace: new rule value - ignoreEmptyLines (Jonathan Gawrych)</li>
+<li>New Rule: disallowCurlyBraces (Henry Zhu)</li>
+<li>requireCapitalizedConstructors: accept list of exempt constructors (Sam L&#39;ecuyer)</li>
+<li>validateIndentation: exception to indentation rules for module pattern (Mike Sherov)</li>
+</ul>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<ul>
+<li>(require|disallow)SpacesInsideArrayBrackets: only check for ArrayExpressions (Mike Sherov)</li>
+<li>JsFile: remove all duplicate tokens. (Mike Sherov)</li>
+<li>ObjectExpression Rules: take into account shorthand syntax. (Mike Sherov)</li>
+<li>disallowSpaceBeforeKeywords: don&#39;t report an error on back-to-back keywords (Mike Sherov)</li>
+<li>requireParenthesesAroundIIFE: fix crash on semicolon-free IIFE (Yuheng Zhang)</li>
+<li>Parsing: tolerate non-leading import statements (Chris Rebert)</li>
+<li>requireCapitalizedComments: improve letter recognition (Mathias Bynens)</li>
+<li>requireSpaces*: fix error message to &#39;Exactly one space required&#39; (Henry Zhu)</li>
+<li>StringChecker: leading hashbangs should still report correct error line numbers (Mike Sherov)</li>
+<li>validateIndentation: don&#39;t check bracelets else indentation. (Mike Sherov)</li>
+<li>validateIndentation: don&#39;t consider return when classifying break indentation (Mike Sherov)</li>
+<li>validateIndentation: fix multiline while in doWhile statements (Mike Sherov)</li>
+<li>validateIndentation: ensure pushes and pops are matching (Mike Sherov)</li>
+<li>validateIndentation: ensure semicolon free indentations are on correct line (Mike Sherov)</li>
+<li>SpaceBetweenArguments: catch call expression arguments (Oleg Gaidarenko)</li>
+<li>token-assert: add check for document start to prevent crashes (Alexej Yaroshevich)</li>
+<li>requireSpaceBeforeBlockStatements: reworded an error message (Alexej Yaroshevich)</li>
+</ul>
+<h3 id="infrastructure-changes">Infrastructure Changes</h3>
+<ul>
+<li>js-file: added getCommentAfter/BeforeToken functions (Alexej Yaroshevich)</li>
+<li>cleanup: remove lib/token-helper (Mike Sherov)</li>
+<li>JsFile: move getLinesWithCommentsRemoved from comment-helper (Mike Sherov)</li>
+</ul>
+<h3 id="misc-">Misc.</h3>
+<ul>
+<li>disallowSpacesInsideArrayBrackets: fix rule name in example (Gustavo Henke)</li>
+<li>Misc: update dependencies (Oleg Gaidarenko)</li>
+<li>various rules: use tokenAssert (Henry Zhu)</li>
+<li>Speed up builds by using Docker-based Travis CI (Pavel Strashkin)</li>
+<li>100% code coverage on various files(Mike Sherov)</li>
+<li>disallowSpace(Before | After)Keywords: more tests (Alexej Yaroshevich)</li>
+<li>requireCurlyBrace: more tests (Alexej Yaroshevich)</li>
+<li>CLI: correct JSDoc comment (Oleg Gaidarenko)</li>
+<li>requireQuotedKeysInObjects: fixing file permissions (Joe Sepi)</li>
+<li>Changelog: correct version number (Oleg Gaidarenko)</li>
+<li>Docs: add missed commit to the changelog (Oleg Gaidarenko)</li>
+<li>Misc: .editorconfig - fix for invalid indent_style value (Dmitriy Schekhovtsov)</li>
+<li>Update regenerate to ~1.2.1 (Chris Rebert)</li>
+<li>Add description to commander CLI help (Chris Rebert)</li>
+</ul>
+<h2 id="version-1-10-0">Version 1.10.0</h2>
+<ul>
+<li>Preset: correct wikimedia preset test (Oleg Gaidarenko)</li>
+<li>Preset: correct jquery preset test (Oleg Gaidarenko)</li>
+<li>Preset: add disallowKeywordsOnNewLine rule to google preset (Oleg Gaidarenko)</li>
+<li>Preset: add &quot;requireSpacesInForStatement&quot; rule to the presets (Oleg Gaidarenko)</li>
+<li><p>Preset: add &#39;catch&#39; to &quot;disallowKeywordsOnNewLine&quot; rule for wikimedia (James Forrester)</p>
+</li>
+<li><p>disallowSpacesInForStatement: Disallow spaces in between for statement (gero3)</p>
+</li>
+<li>requireSpacesInForStatement: Requires spaces inbetween for statement (gero3)</li>
+<li><p>New rule: requireQuotedKeysInObjects (hpshelton)</p>
+</li>
+<li><p>disallowSpacesInsideObjectBrackets: implement &quot;allExcept&quot; option (Oleg Gaidarenko)</p>
+</li>
+<li>requireSpacesInsideObjectBrackets: implement &quot;allExcept&quot; option (Oleg Gaidarenko)</li>
+<li>disallowSpacesInsideArrayBrackets: implement &quot;allExcept&quot; option (Oleg Gaidarenko)</li>
+<li>requireSpacesInsideArrayBrackets: implement &quot;allExcept&quot; option (Oleg Gaidarenko)</li>
+<li><p>requireDotNotation: new rule value - except_snake_case (Alexej Yaroshevich)</p>
+</li>
+<li><p>Configuration: ability to specify and query es3/es6 support in files. (Mike Sherov)</p>
+</li>
+<li><p>cli-config: add &quot;getReporter&quot; method (Oleg Gaidarenko)</p>
+</li>
+<li><p>requireSpaceBeforeBlockStatements: fix for else statement (Oleg Gaidarenko)</p>
+</li>
+<li>disallowSpaceBeforeBlockStatements: fix for else statement (Beau Gunderson)</li>
+<li>disallowKeywordsOnNewLine: add special case for &quot;else&quot; without braces (Oleg Gaidarenko)</li>
+<li>validateIndentation: fix bug with anonymous function return in switch case (Mike Sherov)</li>
+<li>validateIndentation: fix bug with brace-less if in a switch case. (Mike Sherov)</li>
+<li>validateIndentation: fix bug with indentation of bare blocks. (Mike Sherov)</li>
+<li>disallowSpaceAfterBinaryOperators: report correct operator error (Oleg Gaidarenko)</li>
+<li>requireSpaceAfterBinaryOperators: report correct operator error (Oleg Gaidarenko)</li>
+<li>Fixes #909 (wrong type for disallow-capitalized-comments) (alawatthe)</li>
+<li>token-assert: add guards for token and subjectToken properties (Oleg Gaidarenko)</li>
+<li>ESNext: update esprima to properly parse regex tokens (Mike Sherov)</li>
+<li>requireNewlineBeforeBlockStatements: add guard for the first symbol (Oleg Gaidarenko)</li>
+<li>disallowNewlineBeforeBlockStatements: add guard for the first symbol (Oleg Gaidarenko)</li>
+<li>requireDotNotation: require dots for es3 keywords when not in es3 mode (Mike Sherov)</li>
+<li>JsFile: make getNodeByRange check condition less strict (gero3)</li>
+<li>requireSpacesInConditionalExpression: notice parentheses (Alexej Yaroshevich)</li>
+<li>disallowSpacesInConditionalExpression: notice parentheses (Alexej Yaroshevich)</li>
+<li>requirePaddingNewlinesBeforeKeywords: add token exceptions (jdlrobson)</li>
+<li><p>requireLineBreakAfterVariableAssignment: fix edge cases (jdlrobson)</p>
+</li>
+<li><p>Docs: various readme fixes (Oleg Gaidarenko)</p>
+</li>
+<li>Docs: improve &quot;excludeFiles&quot; documentation (Alex Yaroshevich)</li>
+<li>Docs: Fixed level for 1.9.0 to be the same as for 1.8.x (Alexander Artemenko)</li>
+<li><p>README: Fix Bootstrap&#39;s name (Chris Rebert)</p>
+</li>
+<li><p>requireOperatorBeforeLineBreak: Use the new assertion framework (hpshelton)</p>
+</li>
+<li>cli-config: add JSDoc for exposed methods (Oleg Gaidarenko)</li>
+<li>(require | disallow)SpacesInsideObjectBrackets: add bunch of newlines (Oleg Gaidarenko)</li>
+<li>Misc: make jscs happy (Oleg Gaidarenko)</li>
+<li>disallowSpaceBeforeBlockStatements: correct test names (Oleg Gaidarenko)</li>
+<li>disallowSpaceBeforeBlockStatements: use assertion API (Oleg Gaidarenko)</li>
+<li>requireKeywordsOnNewLine: use assertion API (Oleg Gaidarenko)</li>
+<li>Misc: complitly replace hooker with sinon (Oleg Gaidarenko)</li>
+<li>CLI: correct tests for the &quot;reporter&quot; option (Oleg Gaidarenko)</li>
+<li>(require | disallow)NewlineBeforeBlockStatements: remove needless guards (Oleg Gaidarenko)</li>
+<li>(require | disallow)NewlineBeforeBlockStatements: use assertion API (Nicholas Bartlett)</li>
+<li>Move website to a different repo (mdevils)</li>
+<li>utils: add isSnakeCased, trimUnderscores methods (Alexej Yaroshevich)</li>
+<li>requireSpace(Before|After)BinaryOperators: Add tests for error column (hpshelton)</li>
+<li>modules/checker: call spy.restore() after assertions in checkStdin (Alexej Yaroshevich)</li>
+<li>Misc: correct file flags - chmod -x (Oleg Gaidarenko)</li>
+<li>Build: update dependencies (Oleg Gaidarenko)</li>
+</ul>
+<h2 id="version-1-9-0">Version 1.9.0</h2>
+<ul>
+<li>Preset: update wikimedia preset (Timo Tijhof)</li>
+<li><p>Preset: update crockford preset (Jackson Ray Hamilton)</p>
+</li>
+<li><p>New Rules: (require | disallow)SpaceBetweenArguments (James Allardice)</p>
+</li>
+<li>New Rules: requireLineBreakAfterVariableAssignment (jdlrobson)</li>
+<li><p>New Rules: disallowSemicolons (Christopher Cliff)</p>
+</li>
+<li><p>CLI: relative path resolving fix (mdevils)</p>
+</li>
+<li>requireCurlyBraces: correctly set error pointer (Oleg Gaidarenko)</li>
+<li>requireOperatorBeforeLineBreak: Detect binary operator after literal (Lucas Cimon)</li>
+<li><p>requireCapitalizedComments: correct letter recognition (alawatthe)</p>
+</li>
+<li><p>CLI: Remove duplicated error reporting code paths (Mike Sherov)</p>
+</li>
+<li>CLI: remove duplicated preset existence check (Mike Sherov)</li>
+<li>Iterator: extend estraverse rules to support JSX (Yannick Croissant)</li>
+<li>Iterator: use estraverse in tree-iterator. (mdevils)</li>
+<li><p>CLI: Move configuration override to node-configuration (Mike Sherov)</p>
+</li>
+<li><p>Docs: small correction to contributing guide (Oleg Gaidarenko)</p>
+</li>
+<li>Docs: fixed incorrect rule name in example (alawatthe)</li>
+<li>Docs: added keywords for Googleability (Devin Ekins)</li>
+<li>Docs: Correct documentation for disallowOperatorBeforeLineBreak (jdlrobson)</li>
+<li>Docs: Added quotes for uniformity (Callum Macrae)</li>
+<li>Docs: Typo fix (Alexander Sofin)</li>
+<li>Docs: fix urls to yandex codestyle (Andrey Morozov)</li>
+</ul>
+<h2 id="version-1-8-1">Version 1.8.1</h2>
+<ul>
+<li>Assertions: always allow new lines in whitespaceBetween (Henry Zhu)</li>
+<li>Tests: reorganization, full coverage for JsFile (mdevils)</li>
+</ul>
+<h2 id="version-1-8-0">Version 1.8.0</h2>
+<ul>
+<li>Preset: Grunt (Joel Kemp)</li>
+<li><p>Preset: remove &quot;disallowMultipleLineBreaks&quot; rule from crockford preset (Oleg Gaidarenko)</p>
+</li>
+<li><p>New Rules: disallowOperatorBeforeLineBreak (jdlrobson)</p>
+</li>
+<li>New Rules: (require | disallow)PaddingNewlinesBeforeKeywords (Anton Vishnyak)</li>
+<li>New Rules: disallowSpaceBeforeKeywords (Bryan Donovan)</li>
+<li><p>New Rules: requireSpaceBeforeKeywords (Bryan Donovan)</p>
+</li>
+<li><p>Parsing: Ability to specify a custom esprima version via CLI or config (Konstantin Tarkus)</p>
+</li>
+<li>Errors: Support a filter to control which errors are reported (Joel Kemp)</li>
+<li>Assertions: better rule error reporting. (mdevils)</li>
+<li><p>Better configuration, plugin support (mdevils)</p>
+</li>
+<li><p>disallowDanglingUnderscores: Support an array of additional exceptions (Henry Zhu)</p>
+</li>
+<li>requireTrailingComma: add option ignoreSingleLine (eltacodeldiablo)</li>
+<li>StringChecker: unsupported rules shown as style errors and not thrown exceptions (Joel Kemp)</li>
+<li>Iterate over &quot;export&quot; statement of ES6 (Oleg Gaidarenko)</li>
+<li>disallowMultipleVarDecl: add exception for undefined variable declarations (Henry Zhu)</li>
+<li>disallowDanglingUnderscores: add &quot;super_&quot; to allowed identifier list (Markus Dolic)</li>
+<li>disallowSpacesInAnonymousFunctionExpression: set correct error pointer (Oleg Gaidarenko)</li>
+<li><p>requireSpaceAfterLineComment: add &quot;except&quot; option (Alexej Yaroshevich)</p>
+</li>
+<li><p>validateParameterSeparator: fix for multiple spaces between parameters (Henry Zhu)</p>
+</li>
+<li>Added test and patch for <code>finally</code> as a spaced keyword (Todd Wolfson)</li>
+<li>requireCapitalizedComments: Better support for multi-line comments (indexzero)</li>
+<li>disallowSpaceBeforeKeywords: Fix assertion typo (Jeremy Fleischman)</li>
+<li>Errors: Simplify rules debugging and prevent crashes in error reporters (Alexej Yaroshevich)</li>
+<li><p>Correct error message for &quot;requireSpaceAfterKeywords&quot; rule (Bryan Donovan)</p>
+</li>
+<li><p>Docs: Fix Yandex codestyle link (Garmash Nikolay)</p>
+</li>
+<li>Docs: Added clarification of tokens in disallowSpacesInConditionalExpression (indexzero)</li>
+<li>Docs: add twitter and mailling list links (Oleg Gaidarenko)</li>
+<li>Docs: add more specific cases for function spaces rules (Henry Zhu)</li>
+<li>Docs: make indentation to be consistent at 4 spaces (Henry Zhu)</li>
+<li>Docs: Correct docs for requireAnonymousFunctions rule (Oleg Gaidarenko)</li>
+<li>Docs: Clarify &quot;config&quot; option (MaximAL)</li>
+<li>Docs: Add Plugins section (Alexej Yaroshevich)</li>
+</ul>
+<h2 id="version-1-7-3">Version 1.7.3</h2>
+<ul>
+<li>Parsing: Use the harmony parser via the esnext flag in the config (Joel Kemp)</li>
+<li>validateIndentation: handle breakless case statements (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-7-2">Version 1.7.2</h2>
+<ul>
+<li>validateIndentation: fix return in switch failure (Mike Sherov)</li>
+<li>Cast StringChecker maxErrors property to Number the first time (Florian Fesseler)</li>
+<li>Fix format of --esnext and --max-errors in README (Joe Lencioni)</li>
+</ul>
+<h2 id="version-1-7-1">Version 1.7.1</h2>
+<ul>
+<li>validateIndentation: fix empty multiline function body regression (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-7-0">Version 1.7.0</h2>
+<ul>
+<li>validateJSDoc: Deprecate rule (Joel Kemp)</li>
+<li>Updated google preset (Richard Poole)</li>
+<li><p>Add &quot;requireSpaceBeforeBlockStatements&quot; rule into the jquery preset (Oleg Gaidarenko)</p>
+</li>
+<li><p>CLI: Support --esnext to Parse ES6. (Robert Jackson)</p>
+</li>
+<li><p>CLI: Support a --max-errors option to limit the number of reported errors (mdevils)</p>
+</li>
+<li><p>New Rules: (require|disallow)CapitalizedComments (Joel Kemp)</p>
+</li>
+<li>New Rules: (require|disallow)SpacesInCallExpression (Mathieu Schroeter)</li>
+<li>New Rules: (disallow|require)FunctionDeclarations (Nikhil Benesch)</li>
+<li><p>New Rules: (require|disallow)PaddingNewLinesInObjects (Valentin Agachi)</p>
+</li>
+<li><p>Implement &quot;only&quot; for parens rule (Oleg Gaidarenko)</p>
+</li>
+<li>Simplify &quot;allButNested&quot; option for spaces rule (Oleg Gaidarenko)</li>
+<li>Implement &quot;except&quot; option for spaces rule (Oleg Gaidarenko)</li>
+<li><p>disallowMultipleVarDecl: Strict mode to disallow for statement exception (Joel Kemp)</p>
+</li>
+<li><p>disallowSpaceBeforeObjectKeys: fix parenthesised property value (Jindrich Besta)</p>
+</li>
+<li>requireSpaceBeforeObjectValues: fix parenthesised property value (Jindrich Besta)</li>
+<li>validateIndentation: Allow non-indented &quot;break&quot; in &quot;switch&quot; statement (kevin.destrem)</li>
+<li>ValidateIndentation: remove array and object indentation validation (Mike Sherov)</li>
+<li>validateIndentation: Allow the &quot;if&quot; test to be nested. (Jesper Birkestrøm)</li>
+<li>ValidateIndentation: Relax indentation rules for function expressions. (Mike Sherov)</li>
+<li>requireCurlyBraces: support the with statement (Joel Kemp)</li>
+<li>Fix invalid result of findXxxxToken methods when value is provided (Romain Guerin)</li>
+<li><p>requireSpaceAfterLineComment: skips msjsdoc comments (Alexej Yaroshevich)</p>
+</li>
+<li><p>Docs: add a table of contents to README (Henry Zhu)</p>
+</li>
+<li>Docs: Make version numbers real markdown headers (Alexander Artemenko)</li>
+</ul>
+<h2 id="version-1-6-2">Version 1.6.2</h2>
+<ul>
+<li>Fix disallowMultipleLineBreaks with shebang line (Nicolas Gallagher)</li>
+<li>Improve validateParameterSeparator rule (David Chambers)</li>
+<li>Add rule for parameter separation validation (James Allardice)</li>
+<li>Add new rules for object values (Vivien TINTILLIER)</li>
+<li>Docs: add intellij plugin to friendly packages (idok)</li>
+<li>Support predefined values for another three rules (Joel Kemp)</li>
+</ul>
+<h2 id="version-1-6-1">Version 1.6.1</h2>
+<ul>
+<li>Airbnb preset (Joel Kemp)</li>
+<li>Improve crockford preset (Vivien TINTILLIER)</li>
+<li>Avoid node.js 0.10.x exit code bug for MS Windows (Taku Watabe)</li>
+<li>Docs: Update packages and extensions sections with new URLs. (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-6-0">Version 1.6.0</h2>
+<ul>
+<li>Errors: ability to suppress errors via inline comments. (Mike Sherov)</li>
+<li>Fix Anonymous Functions in google preset (Ayoub Kaanich)</li>
+<li>Enhance google&#39;s preset (Joel Kemp)</li>
+<li>Add &quot;iterateTokenByValue&quot; method (Oleg Gaidarenko)</li>
+<li>Node -&gt; Tokens navigation, token list navigation (Marat Dulin)</li>
+<li>Do not strip json config from comments (Oleg Gaidarenko)</li>
+<li>maximumLineLength should not be destructive (Oleg Gaidarenko)</li>
+<li>Use tilde for package definition (Jordan Harband)</li>
+<li>Improve stdin support (Joel Kemp)</li>
+<li>Use correct logic for piped input (Joel Kemp)</li>
+<li>Properly concatenate large files read from stdin (Nikhil Benesch)</li>
+<li>Add link to the Atom editor plugin for JSCS (Addy Osmani)</li>
+<li>Setting default tree to empty object (Bryan Donovan)</li>
+</ul>
+<h2 id="version-1-5-9">Version 1.5.9</h2>
+<ul>
+<li>Binary Rules: Remove colon check from all binary rules (Oleg Gaidarenko)</li>
+<li>Presets: Add Mr. Doob&#39;s Code Style (MDCS) (gero3)</li>
+<li>Presets: Add Crockford (Timo Tijhof)</li>
+<li>Google Preset: Add missing constraints (Turadg Aleahmad)</li>
+<li>Yandex Preset: Remove repeated rule in yandex preset (Benjamin Tamborine)</li>
+<li>Yandex Preset: updated to be more accurate (ikokostya)</li>
+<li>New Rules: (require|disallow)NewlineBeforeBlockStatements (cipiripper)</li>
+<li>New Rules: (require|disallow)AnonymousFunctions (Rachel White)</li>
+<li>New Rules: (disallow|require)SpacesInFunction (Mike Sherov)</li>
+<li>CLI: Accepts piped input from stdin (Joel Kemp)</li>
+<li>CLI: Add --verbose option that adds rule names to error output. (Mike Sherov)</li>
+<li>Errors: report Esprima parse errors as rule violations. (Mike Sherov)</li>
+<li>disallowMultipleLineBreaks: fix issues with shebang line (Bryan Donovan)</li>
+<li>spacesInFunctionExpressions: ignore function declarations. (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-5-8">Version 1.5.8</h2>
+<ul>
+<li>Errors: include which rule triggered the error in the error output (gero3)</li>
+<li>requireTrailingComma: Allow single property objects  / arrays to ignore the rule. (Joel Kemp)</li>
+<li>requireTrailingComma: Avoids false positives from non object/array literal definitions. (Joel Kemp)</li>
+<li>validateIndentation: fix indentation for non-block <code>if</code> that has block <code>else</code>. (Mike Sherov)</li>
+<li>maximumLineLength: Document the required and default values. (Joel Kemp)</li>
+</ul>
+<h2 id="version-1-5-7">Version 1.5.7</h2>
+<ul>
+<li>Exclude colon from binary rule of yandex preset (Oleg Gaidarenko)</li>
+<li>wikimedia: Add &#39;case&#39; and &#39;typeof&#39; to requireSpaceAfterKeywords (Timo Tijhof)</li>
+<li>Correct deal with exclusion and extensions (Oleg Gaidarenko)</li>
+<li>disallowPaddingNewlinesInBlocks: fix false negatives with newline after closing curly. (Iskren Chernev)</li>
+<li>Include jscs-browser file to npm package (Oleg Gaidarenko)</li>
+<li>Clarify docs of use of jscs-browser.js (Oleg Gaidarenko)</li>
+</ul>
+<h2 id="version-1-5-6">Version 1.5.6</h2>
+<ul>
+<li>Correct prebublish script (Oleg Gaidarenko)</li>
+</ul>
+<h2 id="version-1-5-5">Version 1.5.5</h2>
+<ul>
+<li>Add allowUrlComments to yandex preset (ikokostya)</li>
+<li>Improve requireMultipleVarDecl rule (Oleg Gaidarenko)</li>
+<li>Improve fileExtension option (Oleg Gaidarenko)</li>
+<li>Perform file check by direct reference (Oleg Gaidarenko)</li>
+<li>Comma not on the same line with the first operand (Oleg Gaidarenko)</li>
+<li>Simplify doc instruction a bit (Oleg Gaidarenko)</li>
+<li>Generate &quot;jscs-browser.js&quot; only during publishing (Oleg Gaidarenko)</li>
+<li>Fix tests for requireSpaceBeforeBinaryOperators (lemmy)</li>
+</ul>
+<h2 id="version-1-5-4">Version 1.5.4</h2>
+<ul>
+<li>Fix crash caused by multiline case statements that fall through for validateIndentation rule (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-5-3">Version 1.5.3</h2>
+<ul>
+<li>Add missing rules in jQuery preset (Oleg Gaidarenko)</li>
+<li>Exclude comma operator from requireSpaceBeforeBinaryOperators rule (Oleg Gaidarenko)</li>
+<li>Ignore ios instruments style imports (@sebv)</li>
+<li>Various doc fixes (Christian Vuerings, Timo Tijhof, Oleg Gaidarenko)</li>
+</ul>
+<h2 id="version-1-5-2">Version 1.5.2</h2>
+<ul>
+<li>Improve binary rule (Oleg Gaidarenko)</li>
+<li>Fix recursive descend, #445 (Oleg Gaidarenko)</li>
+</ul>
+<h2 id="version-1-5-1">Version 1.5.1</h2>
+<ul>
+<li>Version bump to address incorrectly published docs (Mike Sherov)</li>
+</ul>
+<h2 id="version-1-5-0">Version 1.5.0</h2>
+<ul>
+<li>Sticked Operators Rules: Deprecate in favor of more specific rules (Mike Sherov)</li>
+<li>Update google preset (Oleg Gaidarenko)</li>
+<li>Update jQuery preset (Mike Sherov)</li>
+<li>Implement wikimedia preset (Timo Tijhof)</li>
+<li>Impelement yandex preset (Alexander Tarmolov)</li>
+<li>Implement fileExtensions option (Joel Brandt)</li>
+<li>Implement requireYodaConditions rule (Oleg Gaidarenko)</li>
+<li>Disallow Space After Line Comment: New Rule (Ben Bernard)</li>
+<li>Require Space After Line Comment: New Rule (Ben Bernard)</li>
+<li>Implement requireSpacesInsideParentheses (Mikko Rantanen)</li>
+<li>MaximumLineLength: add ignoreUrlComments option which ignore comments with long urls. (Mike Sherov)</li>
+<li>requireCamelCaseOrUpperCaseIdentifiers: add option to ignore object properties. (Mike Sherov)</li>
+<li>MaximumLineLength: provide relaxing option for comments and/or regular expression literals. (Mike Sherov)</li>
+<li>disallowPaddingNewlinesInBlocks: Count comments as valid tokens. (Joshua Koo)</li>
+<li>Add new option to maximumLineLength rule (Oleg Gaidarenko)</li>
+<li>Function expressions ignore getters and setters (Ruben Tytgat)</li>
+<li>Add &quot;true&quot; as a possible value for binary/unary rules (Oleg Gaidarenko)</li>
+<li>Improve disallowSpacesInsideObjectBrackets (Oleg Gaidarenko)</li>
+<li>Improve disallowSpacesInsideArrayBrackets (Oleg Gaidarenko)</li>
+<li>Improve disallowSpacesInsideArrayBrackets rule (Oleg Gaidarenko)</li>
+<li>Improve disallowSpacesInsideObjectBrackets rule (Oleg Gaidarenko)</li>
+<li>Improve disallowQuotedKeysInObjects rule (Oleg Gaidarenko)</li>
+<li>Improve requireSpacesInsideObjectBrackets rule (Oleg Gaidarenko)</li>
+<li>Improve handling comments for *SpaceAfterKeywords (Oleg Gaidarenko)</li>
+<li>Improve requireOperatorBeforeLineBreak (Oleg Gaidarenko)</li>
+<li>Improve defintions of operators in utils module (Oleg Gaidarenko)</li>
+<li>Improve requireSpaceBeforePostfixUnaryOperators (Oleg Gaidarenko)</li>
+<li>Improve disallowSpaceBeforePostfixUnaryOperators (Oleg Gaidarenko)</li>
+<li>Improve requireSpaceAfterPrefixUnaryOperators (Oleg Gaidarenko)</li>
+<li>Improve disallowSpaceAfterPrefixUnaryOperators (Oleg Gaidarenko)</li>
+<li>Improve disallowSpaceAfterBinaryOperators rule (Oleg Gaidarenko)</li>
+<li>Improve requireSpaceBeforeBinaryOperators rule (Oleg Gaidarenko)</li>
+<li>Improve disallowSpaceBeforeBinaryOperators rule (Oleg Gaidarenko)</li>
+<li>Improve requireSpaceAfterBinaryOperators rule (Oleg Gaidarenko)</li>
+<li>Improve requireOperatorBeforeLineBreak rule (Oleg Gaidarenko)</li>
+<li>Improve requireSpaceAfterPrefixUnaryOperators rule (Oleg Gaidarenko)</li>
+<li>Improve requireOperatorBeforeLineBreak rule (Oleg Gaidarenko)</li>
+<li>Differentiate errors for requireSpaceAfterKeywords (Oleg Gaidarenko)</li>
+<li>Modify lint options of jshint and jscs (Oleg Gaidarenko)</li>
+<li>Test Cleanup (Oleg Gaidarenko)</li>
+<li>Throw error if specified preset does not exist (Oleg Gaidarenko)</li>
+<li>utils: Remove duplicate &#39;+=&#39; from binaryOperators (Timo Tijhof)</li>
+<li>Various readme fixes (Syoichi Tsuyuhara)</li>
+<li>Provide friendly message for corrupted config (Oleg Gaidarenko)</li>
+<li>Use new Vow API (Jordan Harband)</li>
+<li>Update Mocha (Jordan Harband)</li>
+<li>Update dependencies (Jordan Harband)</li>
+<li>Various improvements to the utils module (Oleg Gaidarenko)</li>
+<li>&quot;null&quot; must be a quoted key in IE 6-8 (Jordan Harband)</li>
+<li>Change signature of findOperatorByRangeStart (Oleg Gaidarenko)</li>
+<li>Add isTokenParenthesis method to token helper (Oleg Gaidarenko)</li>
+<li>Improve getTokenByRangeStart method (Oleg Gaidarenko)</li>
+<li>Correct docs for requireSpacesInsideParentheses (Oleg Gaidarenko)</li>
+<li>readme: Clean up assignment operators (Timo Tijhof)</li>
+</ul>
+<h2 id="version-1-4-5">Version 1.4.5</h2>
+<ul>
+<li>Hotfix: Fix binary rules for &quot;,&quot; and &quot;=&quot; operators (@markelog)</li>
+</ul>
+<h2 id="version-1-4-4">Version 1.4.4</h2>
+<ul>
+<li>Improve <code>requireSpaceAfterBinaryOperators</code> rule (@markelog)</li>
+<li>Improve <code>disallowSpaceAfterBinaryOperators</code> rule (@markelog)</li>
+<li>Improve <code>requireSpaceBeforeBinaryOperators</code> rule (@markelog)</li>
+<li>Improve <code>disallowSpaceBeforeBinaryOperators</code> rule (@markelog)</li>
+<li>Update google preset (@markelog)</li>
+<li>Fixes <code>requirePaddingNewlinesInBlocks</code>: support multi-line padding (@zz85)</li>
+<li>Update error message when no config is found (@mikesherov)</li>
+<li>Rule <code>requireSpacesInConditionalExpression</code> (@mikesherov)</li>
+<li>Rule <code>disallowSpacesInConditionalExpression</code> (@mikesherov)</li>
+<li>Fixes for <code>validateIndentation</code> rule: fix more weird onevar constructs and associated indentation rules. (@mikesherov)</li>
+<li>Fixes for <code>validateIndentation</code> rule: fix bug when IfStatement test contains a BlockStatement</li>
+</ul>
+<h2 id="version-1-4-3-">Version 1.4.3:</h2>
+<ul>
+<li>Presets folder was missing in the package (@mdevils).</li>
+</ul>
+<h2 id="version-1-4-2-">Version 1.4.2:</h2>
+<ul>
+<li>Rule <code>requireSpaceAfterKeywords</code>: do not fail on linebreaks (@mdevils).</li>
+</ul>
+<h2 id="version-1-4-1-">Version 1.4.1:</h2>
+<ul>
+<li>Rule <code>disallowPaddingNewlinesInBlocks</code>: check for comments in the whitespace. Fixes #347 (@mikesherov).</li>
+<li>Introduce extensions section in README (@zxqfox)</li>
+<li>Fixes for <code>validateIndentation</code> rule: properly validate finally clauses. Fixes #311 (@mikesherov).</li>
+<li>Fixes for <code>validateIndentation</code> rule: tests for holes in array and more complex temporary fix for it (@zxqfox).</li>
+<li>Fixes for <code>validateIndentation</code> rule: allow for extra indents when first variable
+in a declaration is multi-line (@mikesherov).</li>
+<li>Fixes for <code>validateIndentation</code> rule: prevent false positive when array elements are
+on same line as array opener, but array is not single line. Fixes #353 (@mikesherov)</li>
+<li>Restructuration of lib/test files (@markelog)</li>
+</ul>
+<h2 id="version-1-4-0-">Version 1.4.0:</h2>
+<ul>
+<li>Dropped <code>node.js</code> 0.8 support.</li>
+<li>Update all dependencies to their latest versions except <code>vow</code>/<code>vow-fs</code> (@XhmikosR).</li>
+<li>Add dependency status badges (@XhmikosR).</li>
+<li>Advanced search for the configuration files (@markelog).</li>
+<li>Improve <code>requireSpaceAfterKeywords</code> rule: trigger error if there is more then two spaces (@markelog).</li>
+<li>Rule <code>spaceAfterKeywords</code>: fix up funarg issue (@markelog).</li>
+<li>Make <code>requireMultipleVarDecl</code> rule more like onevar (@markelog).</li>
+<li>Allow comments in parentheses for rule <code>disallowSpacesInsideParentheses</code> (@Famlam).</li>
+<li>Extract own settings into google preset (@jzaefferer).</li>
+<li>Rule <code>disallowTrailingComma</code> (@rxin).</li>
+<li>Rule <code>requireTrailingComma</code> (@rxin).</li>
+<li>Rule <code>disallowSpaceBeforeBlockStatements</code> (@rxin).</li>
+<li>Rule <code>requireSpaceBeforeBlockStatements</code> (@rxin).</li>
+<li>Rule <code>requireBlocksOnNewline</code> (@mikesherov).</li>
+<li>Rule <code>requirePaddingNewlinesInBlock</code> (@mikesherov).</li>
+<li>Rule <code>disallowPaddingNewlinesInBlock</code> (@mikesherov).</li>
+</ul>
+<h2 id="version-1-3-0-">Version 1.3.0:</h2>
+<ul>
+<li>New JSCS config format: <code>.jscsrc</code>. JSON-file with comments.</li>
+<li>Rule <code>requireBlocksOnNewline</code> (@Famlam).</li>
+<li>Rule <code>requireSpacesInAnonymousFunctionExpression</code> (@jamesallardice).</li>
+<li>Rule <code>disallowSpacesInAnonymousFunctionExpression</code> (@jamesallardice).</li>
+<li>Rule <code>requireSpacesInNamedFunctionExpression</code> (@jamesallardice).</li>
+<li>Rule <code>disallowSpacesInNamedFunctionExpression</code> (@jamesallardice).</li>
+<li>Custom path to reporter (@Adeel).</li>
+<li>Option <code>escape</code> for rule <code>validateQuote</code> (@mikesherov).</li>
+<li>Fixed <code>validateIndentation</code> rule (@mikesherov).</li>
+<li>Fixed <code>excludeFiles</code> option (@markelog).</li>
+<li>CLI/Reporter fixes (@markelog, @am11).</li>
+<li>Documentation fixes (@tenorok).</li>
+<li>Minor tweaks (@XhmikosR).</li>
+</ul>
+<h2 id="version-1-2-4-">Version 1.2.4:</h2>
+<ul>
+<li>Fixed typos.</li>
+<li>Fixed <code>validateIndentation</code> rule.</li>
+<li>Sorting errors.</li>
+</ul>
+<h2 id="version-1-2-3-">Version 1.2.3:</h2>
+<ul>
+<li>New reporter: <code>inline</code> (@clochix).</li>
+<li>Fixed for rule <code>requireDotNotation</code> (@ikokostya).</li>
+</ul>
+<h2 id="version-1-2-2-">Version 1.2.2:</h2>
+<ul>
+<li>Fixed case with number for <code>requireDotNotation</code> rule (@andrewblond).</li>
+</ul>
+<h2 id="version-1-2-1-">Version 1.2.1:</h2>
+<ul>
+<li>Fix in error message for rule <code>maximumLineLength</code> (@pdehaan).</li>
+</ul>
+<h2 id="version-1-2-0-">Version 1.2.0:</h2>
+<ul>
+<li>Rule <code>requireCommaBeforeLineBreak</code> (@mikesherov).</li>
+<li>Rule <code>disallowCommaBeforeLineBreak</code> (@mikesherov).</li>
+<li>Rule <code>requireDotNotation</code> (@mikesherov).</li>
+<li>Rule <code>requireCamelCaseOrUpperCaseIdentifiers</code> (@mikesherov).</li>
+<li>Rule <code>disallowEmptyBlocks</code> (@mikesherov).</li>
+<li>Rule <code>validateQuoteMarks</code> (@mikesherov).</li>
+<li>Rule <code>requireParenthesesAroundIIFE</code> (@mikesherov).</li>
+<li>Rule <code>requireOperatorBeforeLineBreak</code> (@mikesherov).</li>
+<li>Rule <code>requireCapitalizedConstructors</code> (@mikesherov).</li>
+<li>Rule <code>disallowDanglingUnderscores</code> (@mikesherov).</li>
+<li>Rule <code>disallowTrailingWhitespace</code> (@mikesherov).</li>
+<li>Сurly brace checking for &#39;case&#39; and &#39;default&#39; statements (@mikesherov).</li>
+<li>Rule <code>maximumLineLength</code> (@mikesherov).</li>
+<li>Rule <code>disallowMixedSpacesAndTabs</code> (@mikesherov).</li>
+<li>Rule <code>validateIndentation</code> (@mikesherov).</li>
+<li>README: Reformat to use headings (@nschonni).</li>
+<li>ES3 future reserved words added to tokenIsReservedWord() (@maxatwork).</li>
+<li>Fixes for: requireSpaceBeforePostfixUnaryOperators, requireSpaceAfterPrefixUnaryOperators,
+disallowSpaceBeforePostfixUnaryOperators, disallowSpaceAfterPrefixUnaryOperators (@mdevils).</li>
+<li>Rule <code>disallowMultipleLineStrings</code> (@mikesherov).</li>
+</ul>
+<h2 id="version-1-0-15-">Version 1.0.15:</h2>
+<ul>
+<li>junit reporter (@markelog).</li>
+</ul>
+<h2 id="version-1-0-14-">Version 1.0.14:</h2>
+<ul>
+<li>Option <code>additionalRules</code> (@markelog).</li>
+<li>disallowQuotedKeysInObjects: Exclusion array (@nschonni).</li>
+</ul>
+<h2 id="version-1-0-13-">Version 1.0.13:</h2>
+<ul>
+<li>Option <code>validateLineBreaks</code> (@twoRoger).</li>
+</ul>
+<h2 id="version-1-0-12-">Version 1.0.12:</h2>
+<ul>
+<li>Fixes for jsdoc params.</li>
+</ul>
+<h2 id="version-1-0-11-">Version 1.0.11:</h2>
+<ul>
+<li>Prefix unary rules: <code>disallowSpaceAfterPrefixUnaryOperators</code>, <code>requireSpaceAfterPrefixUnaryOperators</code> (@mishaberezin).</li>
+<li>Postfix unary rules: <code>disallowSpaceBeforePostfixUnaryOperators</code>, <code>requireSpaceBeforePostfixUnaryOperators</code> (@mishaberezin).</li>
+</ul>
+<h2 id="version-1-0-10-">Version 1.0.10:</h2>
+<ul>
+<li>Reporter support — <code>console</code>, <code>text</code>, <code>checkstyle</code>.</li>
+</ul>
+<h2 id="version-1-0-9-">Version 1.0.9:</h2>
+<ul>
+<li>Browser-compatible version.</li>
+<li>Fix for <code>disallowMultipleLineBreaks</code> option to report only once per each sequence of line breaks.</li>
+<li>Fix for <code>disallowMultipleLineBreaks</code> option to work properly when CRLF line break is used.</li>
+</ul>
+<h2 id="version-1-0-8-">Version 1.0.8:</h2>
+<ul>
+<li>Fixes for <code>safeContextKeyword</code>.</li>
+</ul>
+<h2 id="version-1-0-7-">Version 1.0.7:</h2>
+<ul>
+<li>Disallow spaces inside parentheses (@ignovak).</li>
+</ul>
+<h2 id="version-1-0-6-">Version 1.0.6:</h2>
+<ul>
+<li>Convert tabs into spaces (@markelog).</li>
+<li>Report illegal space between nested closing curly braces (@twoRoger).</li>
+<li>Use absolute path to config when specified (@vtambourine).</li>
+<li>safeContextKeyword option to check &quot;var that = this&quot; expressions (@doochik).</li>
+</ul>
+<h2 id="version-1-0-4-1-0-5-">Version 1.0.4-1.0.5:</h2>
+<ul>
+<li>Fixed mistype <code>disallowMulipleVarDecl</code> -&gt; <code>disallowMultipleVarDecl</code>.</li>
+<li>Fixed error for invalid symlink checking.</li>
+</ul>
+<h2 id="version-1-0-3-">Version 1.0.3:</h2>
+<ul>
+<li>Changed behaviour for <code>disallowMultipleVarDecl</code> options. Now accepts multiple var decl in <code>for</code> decl.</li>
+</ul>
+<h2 id="version-1-0-2-">Version 1.0.2:</h2>
+<ul>
+<li>Option <code>requireSpacesInsideArrayBrackets</code> (@mishanga).</li>
+</ul>
+<h2 id="version-1-0-1-">Version 1.0.1:</h2>
+<ul>
+<li>Not reporting about extra quotes for zero-starting numbers in <code>disallowQuotedKeysInObjects</code>.</li>
+</ul>
+<h2 id="version-1-0-0-">Version 1.0.0:</h2>
+<ul>
+<li>Camel-case configuration options.</li>
+<li>Option <code>requireAlignedObjectValues</code>.</li>
+<li>Option <code>requireSpaceAfterObjectKeys</code>.</li>
+<li>JSDoc for core functions and classes.</li>
+<li>Fix error position for disallowSpacesInsideObjectBrackets and disallowSpacesInsideArrayBrackets.</li>
+</ul>
+<h2 id="version-0-0-12-">Version 0.0.12:</h2>
+<ul>
+<li>Fix in <code>disallowSpaceAfterObjectKeys</code> location reporting.</li>
+</ul>
+<h2 id="version-0-0-11-">Version 0.0.11:</h2>
+<ul>
+<li>Option <code>disallowSpaceAfterObjectKeys</code>.</li>
+<li>Option <code>disallowSpacesInsideArrayBrackets</code>.</li>
+<li>Do not automatically exclude hidden files.</li>
+</ul>
+<h2 id="version-0-0-10-">Version 0.0.10:</h2>
+<ul>
+<li>Fix in <code>disallowQuotedKeysInObjects</code>.</li>
+</ul>
+<h2 id="version-0-0-9-">Version 0.0.9:</h2>
+<ul>
+<li>Fix in <code>disallowQuotedKeysInObjects</code>.</li>
+</ul>
+<h2 id="version-0-0-8-">Version 0.0.8:</h2>
+<ul>
+<li>Fix in <code>requireSpacesInsideObjectBrackets</code>.</li>
+<li>Option <code>disallowQuotedKeysInObjects</code>.</li>
+</ul>
+<h2 id="version-0-0-7-">Version 0.0.7:</h2>
+<ul>
+<li>Option <code>requireSpacesInsideObjectBrackets</code>.</li>
+<li>Option <code>disallowSpacesInsideObjectBrackets</code>.</li>
+</ul>
+<h2 id="version-0-0-6-">Version 0.0.6:</h2>
+<ul>
+<li>Fixes incorrent checkPath behavior.</li>
+</ul>
+<h2 id="version-0-0-5-">Version 0.0.5:</h2>
+<ul>
+<li>.jshintrc config.</li>
+<li>Error message format fixes.</li>
+</ul>
+<h2 id="version-0-0-4-">Version 0.0.4:</h2>
+<ul>
+<li>Option <code>disallowYodaConditions</code>.</li>
+<li>Option <code>requireMultipleVarDecl</code>.</li>
+</ul>
+<h2 id="version-0-0-3-">Version 0.0.3:</h2>
+<ul>
+<li>Option <code>excludeFiles</code>, which accepts patterns.</li>
+</ul>
+<h2 id="version-0-0-2-">Version 0.0.2:</h2>
+<ul>
+<li>Link to parent nodes.</li>
+</ul>
+<h2 id="version-0-0-1-">Version 0.0.1:</h2>
+<ul>
+<li>Initial implementation.</li>
+</ul>
+</div></div><footer class="footer" data-reactid=".155r1p49clc.5.0.2"><span class="footer__copyrights" data-reactid=".155r1p49clc.5.0.2.0"><span data-reactid=".155r1p49clc.5.0.2.0.0">© </span><span data-reactid=".155r1p49clc.5.0.2.0.1">2015</span><span data-reactid=".155r1p49clc.5.0.2.0.2"> JSCS</span></span><span class="footer__designer" data-reactid=".155r1p49clc.5.0.2.1">Design: Tasha Orbita</span></footer></div></div></div>
+    </div>
+    <script type="application/javascript">
+        window.__locationState = {"page":"changelog","data":null};
+    </script>
+    <script type="application/javascript" src="./assets/data.js"></script>
+    <script type="application/javascript" src="./assets/bundle.js"></script>
+</body>
+</html>
