@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JSCS</title>
+</head>
+<body>
+    <div id="root">
+
+    </div>
+    <script>
+        var request = new XMLHttpRequest();
+        request.open('GET', '/tmp/data.json', false);
+        request.send(null);
+        window.__jscsData = JSON.parse(request.responseText);
+    </script>
+    <script src="http://localhost:3000/tmp/bundle.js" type="application/javascript"></script>
+</body>
+</html>

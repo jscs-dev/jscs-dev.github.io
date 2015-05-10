@@ -1,0 +1,29 @@
+.social-buttons {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+        display: inline-block;
+        line-height: 20px;
+        vertical-align: top;
+        & + & {
+            margin-left: 10px;
+        }
+    }
+
+    &__mailing-list {
+        display: block;
+        border: 1px #D4D4D4 solid;
+        border-radius: 3px;
+        color: #333;
+        text-shadow: 0 1px 0 #fff;
+        font-size: 11px;
+        font-weight: bold;
+        text-decoration: none;
+        height: 17px;
+        padding: 1px 5px 0;
+        line-height: 17px;
+        background: #fafafa linear-gradient(#fafafa, #eaeaea);
+    }
+}

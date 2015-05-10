@@ -1,0 +1,52 @@
+.menu {
+
+    &_index {
+        font-size: 20px;
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            display: inline;
+            & + & {
+                margin-left: 50px;
+            }
+        }
+    }
+
+    &_page {
+        $header-height = 60px;
+
+        display: inline-block;
+        font-size: 15px;
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            display: inline-block;
+            height: $header-height;
+            padding: 0 20px;
+            a {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: $header-height;
+            }
+            a, a:visited {
+                color: white;
+                &:hover {
+                    color: white;
+                    text-decoration: underline;
+                }
+            }
+            &._active {
+                background: white;
+                a, a:visited {
+                    color: black;
+                    &:hover {
+                        color: black;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

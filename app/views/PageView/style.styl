@@ -1,0 +1,108 @@
+.page {
+    &__content {
+        width: 700px;
+        margin: 47px auto 67px;
+        font-size: 16px;
+        line-height: 1.6;
+
+        .markdown {
+            h1, h2, h3, h4, h5 {
+                position: relative;
+                margin-top: 1em;
+                margin-bottom: 16px;
+                line-height: 1.4;
+            }
+
+            h1 {
+                font-size: 40px;
+                font-weight: normal;
+            }
+
+            .toc {
+                border: 1px solid #eee;
+                background: #ffffff;
+                float: right;
+                position: relative;
+                z-index: 1;
+                padding: 10px 20px;
+                color: #555;
+                margin: 0 0 10px 20px;
+            }
+
+            .toc ul {
+                list-style-type: disc;
+                margin: 0;
+                padding: 0 0 0 20px;
+            }
+
+            .toc a {
+                border-bottom: 1px dotted #4183c4;
+                font-size: 14px;
+            }
+
+            .toc-header {
+                font-weight: bold;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                padding-bottom: 0.3em;
+                font-size: 1.75em;
+                line-height: 1.225;
+                border-bottom: 1px solid #eee;
+            }
+
+            h3 {
+                font-size: 1.5em;
+                line-height: 1.43;
+            }
+
+            code:before, code:after {
+                letter-spacing: -0.2em;
+                content: "\00a0";
+            }
+
+            code {
+                padding: 0.2em 0;
+                margin: 0;
+                background-color: rgba(0,0,0,0.04);
+                border-radius: 3px;
+                font: 85% Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            }
+
+            pre {
+                background-color: rgba(0,0,0,0.04);
+                padding: 16px;
+                overflow: auto;
+                background-color: #f7f7f7;
+                border-radius: 3px;
+            }
+
+            pre code {
+                border-radius: 0;
+                background: none;
+            }
+
+            pre code:before, pre code:after {
+                display: none;
+            }
+
+            ul {
+                padding-left: 2em;
+            }
+
+            .hljs-string {
+                color: #df5000;
+            }
+
+            .hljs-comment {
+                color: #969896;
+            }
+
+            .hljs-keyword {
+                color: #a71d5d;
+            }
+        }
+    }
+}

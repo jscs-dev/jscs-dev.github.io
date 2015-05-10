@@ -1,0 +1,39 @@
+.header {
+
+    &__top {
+        background: #656661;
+    }
+
+    &__bottom {
+        position: absolute;
+        margin-top: 20px;
+        right: 20px;
+    }
+
+    $header-height = 60px;
+
+    &__logo {
+        vertical-align: middle;
+        display: inline-block;
+        width: $header-height;
+        height: $header-height;
+        background: url(logo.png);
+        background-size: 100% 100%;
+    }
+
+    &__project {
+        vertical-align: middle;
+        height: $header-height;
+        line-height: $header-height;
+        display: inline-block;
+        color: rgba(255, 255, 255, 0.4);
+        font-weight: bold;
+        padding-left: 20px;
+    }
+
+    &__menu {
+        margin-left: 30px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
