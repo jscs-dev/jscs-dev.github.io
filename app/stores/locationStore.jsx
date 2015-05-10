@@ -37,6 +37,9 @@ class LocationStore extends EventEmitter {
 
     _navigate(newState, pushToHistory) {
         if (this._state.page !== newState.page || this._state.data !== newState.data) {
+            var newPath = this.renderPath(
+                newState.page, newState.data
+            );
             this._state = newState;
             if (typeof document !== 'undefined') {
                 document.title = this.getTitle();
@@ -46,9 +49,7 @@ class LocationStore extends EventEmitter {
                 typeof window.history.pushState !== 'undefined'
             ) {
                 try {
-                    window.history.pushState(null, this.getTitle(), this.renderPath(
-                        newState.page, newState.data
-                    ));
+                    window.history.pushState(null, this.getTitle(), newPath);
                 } catch (e) {} // Can fail on file:// origins
             }
             this.emit('change');
