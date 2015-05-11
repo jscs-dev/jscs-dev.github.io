@@ -30,7 +30,8 @@ module.exports = {
                 test: /\.styl$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader!stylus-loader')
             },
-            {test: /\.png$/, loader: 'url-loader?limit=100000'}
+            {test: /\.png$/, loader: 'url-loader?limit=100000'},
+            {test: /\.svg$/, loader: 'raw-loader?limit=100000'}
         ]
     }
 };
