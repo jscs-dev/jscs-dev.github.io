@@ -54,6 +54,7 @@ function buildRuleInfo(rulePath) {
     var projectUrl = 'https://github.com/' + config.githubOrganization + '/' + config.githubProject;
     var blobUrl = projectUrl + '/blob/master';
     var fileUrl = blobUrl + '/lib/rules/' + filename;
+    var testUrl = blobUrl + '/test/specs/rules/' + filename;
 
     return vowFs.read(rulePath, 'utf8').then(function(fileContents) {
         var match = fileContents.match(/^\/\*\*([\s\S]*?)\*\//m);
@@ -74,6 +75,7 @@ function buildRuleInfo(rulePath) {
             name: optionName,
             description: description,
             sourceUrl: fileUrl,
+            testUrl: testUrl,
             filename: filename
         });
     });

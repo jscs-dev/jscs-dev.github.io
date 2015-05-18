@@ -3,6 +3,7 @@ class RuleModel {
         this._name = data.name;
         this._description = data.description;
         this._sourceUrl = data.sourceUrl;
+        this._testUrl = data.testUrl;
         this._filename = data.filename;
     }
 
@@ -18,6 +19,10 @@ class RuleModel {
         return this._sourceUrl;
     }
 
+    getTestUrl() {
+        return this._testUrl;
+    }
+
     getFilename() {
         return this._filename;
     }
@@ -26,7 +31,8 @@ class RuleModel {
         return {
             name: this._name,
             description: this._description,
-            sourceUrl: this._sourceUrl
+            sourceUrl: this._sourceUrl,
+            testUrl: this._testUrl
         };
     }
 }

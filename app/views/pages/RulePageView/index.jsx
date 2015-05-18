@@ -20,6 +20,8 @@ export default React.createClass({
                          dangerouslySetInnerHTML={{__html: rule.getDescription()}}>
                     </div>
                 </div>
+                <div><a href={rule.getSourceUrl()}>Rule source</a></div>
+                <div><a href={rule.getTestUrl()}>Test source</a></div>
             </PageView>
         )
     }
