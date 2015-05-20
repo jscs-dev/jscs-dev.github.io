@@ -69,11 +69,20 @@ function buildRuleInfo(rulePath) {
             description = doc;
         }
 
+        var lines = description.trim().split('\n');
+        var shortDescription = '';
+        var line;
+        while ((line = lines.shift()).trim() !== '') {
+            shortDescription += line + '\n';
+        }
+
         description = processMarkdown('# ' + optionName + '\n\n' + description + '\n\n');
+        shortDescription = processMarkdown(shortDescription);
 
         return new RuleModel({
             name: optionName,
             description: description,
+            shortDescription: shortDescription,
             sourceUrl: fileUrl,
             testUrl: testUrl,
             filename: filename

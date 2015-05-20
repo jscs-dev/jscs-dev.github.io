@@ -3,8 +3,15 @@
     padding: 0;
 
     &__item {
+        margin-left: 25px;
         &::before {
             content: '— ';
+            position: absolute;
+            margin-left: -25px;
         }
+    }
+
+    &__item-description {
+        margin-top: -10px;
     }
 }

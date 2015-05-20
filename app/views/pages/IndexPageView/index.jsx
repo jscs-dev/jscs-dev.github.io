@@ -3,9 +3,8 @@ import MenuView from '../../header/MenuView';
 import FooterView from '../../FooterView';
 import SocialButtonsView from '../../header/SocialButtonsView';
 import dataStore from '../../../stores/dataStore';
-import logo from './logo.svg';
 
-require('./style.styl');
+import './style.styl';
 
 export default React.createClass({
     render() {
@@ -28,8 +27,7 @@ export default React.createClass({
         return (
             <div className="index">
                 <section className="index__intro">
-                    <div className="index__logo" dangerouslySetInnerHTML={{__html: logo}}>
-                    </div>
+                    <div className="index__logo" />
 
                     <h1 className="index__title">
                         {index.getTitle()}

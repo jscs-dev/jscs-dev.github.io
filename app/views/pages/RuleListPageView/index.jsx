@@ -13,11 +13,13 @@ export default React.createClass({
             <PageView>
                 <TitleView>Rules</TitleView>
                 <ul className="rule-list">
-                    {dataStore.getData().getRules().map((rule) => {
-                        return <RuleListItem
-                            key={rule.getFilename()}
-                            rule={rule} />;
-                    })}
+                    {dataStore.getData().getRules()
+                        .filter((rule) => Boolean(rule.getShortDescription()))
+                        .map((rule) => {
+                            return <RuleListItem
+                                key={rule.getFilename()}
+                                rule={rule} />;
+                        })}
                 </ul>
             </PageView>
         )
@@ -38,6 +40,11 @@ var RuleListItem = React.createClass({
                     onClick={this._onClick}>
                     {this.props.rule.getName()}
                 </a>
+                <div className="rule-list__item-description">
+                    <div className="markdown"
+                         dangerouslySetInnerHTML={{__html: this.props.rule.getShortDescription()}}>
+                    </div>
+                </div>
             </li>
         );
     }

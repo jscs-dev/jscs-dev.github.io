@@ -3,7 +3,6 @@ import MenuView from '../MenuView';
 import SocialButtonsView from '../SocialButtonsView';
 import locationStore from '../../../stores/locationStore';
 import navigation from '../../../actions/navigation';
-import logo from './logo.svg';
 
 import './style.styl';
 
@@ -18,8 +17,7 @@ export default React.createClass({
             <header className="header">
                 <div className="header__top">
                     <a href={locationStore.renderPath('index')} onClick={this._onClick}>
-                        <div className="header__logo" dangerouslySetInnerHTML={{__html: logo}}>
-                        </div>
+                        <div className="header__logo" />
                         <div className="header__project">
                             JavaScript Code Style
                         </div>

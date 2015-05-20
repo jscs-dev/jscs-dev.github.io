@@ -2,6 +2,7 @@ class RuleModel {
     constructor(data) {
         this._name = data.name;
         this._description = data.description;
+        this._shortDescription = data.shortDescription;
         this._sourceUrl = data.sourceUrl;
         this._testUrl = data.testUrl;
         this._filename = data.filename;
@@ -13,6 +14,10 @@ class RuleModel {
 
     getDescription() {
         return this._description;
+    }
+
+    getShortDescription() {
+        return this._shortDescription;
     }
 
     getSourceUrl() {
@@ -31,6 +36,7 @@ class RuleModel {
         return {
             name: this._name,
             description: this._description,
+            shortDescription: this._shortDescription,
             sourceUrl: this._sourceUrl,
             testUrl: this._testUrl
         };
