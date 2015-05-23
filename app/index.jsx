@@ -6,6 +6,6 @@ if (typeof window.__jscsData !== 'undefined') {
     dataStore.setData(JscsModel.fromJSON(window.__jscsData));
 }
 
-import AppView from './views/AppView';
+var AppView = require('./views/AppView');
 
 React.render(<AppView />, document.getElementById('root'));
