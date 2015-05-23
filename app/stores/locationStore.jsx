@@ -1,5 +1,6 @@
 import {EventEmitter} from 'events';
 import appDispatcher from '../dispatchers/appDispatcher';
+import dataStore from './dataStore';
 
 class LocationStore extends EventEmitter {
     constructor() {
@@ -10,16 +11,20 @@ class LocationStore extends EventEmitter {
             data: null
         };
 
-        if (typeof window !== 'undefined'){
+        if (typeof window !== 'undefined') {
             if (window.__locationState) {
-                this._state = window.__locationState;
+                this._state = processRewrites(window.__locationState, getCurrentWindowHash());
             }
 
+            var onUrlChanged = () => {
+                let newState = processRewrites(parsePath(String(window.location.pathname)), getCurrentWindowHash());
+                this._navigate(newState, false);
+            };
+
             if (typeof window.onpopstate !== 'undefined') {
-                window.addEventListener('popstate', () => {
-                    var newState = parsePath(String(window.location.pathname));
-                    this._navigate(newState, false);
-                })
+                window.addEventListener('popstate', onUrlChanged);
+            } else if (typeof window.onhashchange !== 'undefined') {
+                window.addEventListener('hashchange', onUrlChanged);
             }
         }
 
@@ -30,6 +35,7 @@ class LocationStore extends EventEmitter {
         if (payload.action === 'NAVIGATE') {
             this._navigate(payload, true);
         }
+
         if (payload.action === 'NAVIGATE_TO_PATH') {
             this._navigate(parsePath(payload.path), true);
         }
@@ -108,4 +114,44 @@ function parsePath(path) {
             data: pathBits.shift() || null
         };
     }
+}
+
+function getCurrentWindowHash() {
+    if (typeof window !== 'undefined') {
+        var fullHash = window.location.hash;
+        if (fullHash && fullHash.charAt(0) === '#') {
+            return fullHash.slice(1);
+        }
+    }
+    return '';
+}
+
+/**
+ * Processing legacy urls.
+ * @private
+ */
+function processRewrites(state, windowHash) {
+    if (windowHash) {
+        var ruleName = getRuleName(windowHash);
+        if ((state.page === 'rule' || state.page === 'rules') && ruleName) {
+            return {
+                page: 'rule',
+                data: ruleName
+            };
+        }
+    }
+    return state;
+}
+
+let lowerRuleNameIndex;
+
+function getRuleName(input) {
+    if (!lowerRuleNameIndex) {
+        lowerRuleNameIndex = dataStore.getData().getRules().reduce((obj, rule) => {
+            obj[rule.getName().toLowerCase()] = rule.getName();
+            return obj;
+        }, {})
+    }
+
+    return lowerRuleNameIndex[input.toLowerCase()];
 }

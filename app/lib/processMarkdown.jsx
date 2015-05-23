@@ -54,7 +54,6 @@ function generateHeaderAnchor(text) {
             }
         }
     }
-    if (text.indexOf('Why') !== -1) console.log(text, '->', heading);
     return heading;
 }
 

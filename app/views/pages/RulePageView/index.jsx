@@ -5,13 +5,29 @@ import PageView from '../../PageView';
 import TitleView from '../../TitleView';
 
 export default React.createClass({
+    getInitialState() {
+        return {
+            ruleName: locationStore.getData()
+        };
+    },
+
+    componentDidMount() {
+        this._locationStoreChangeHandler = () => {
+            this.setState(this.getInitialState());
+        };
+        locationStore.on('change', this._locationStoreChangeHandler);
+    },
+
+    componentWillUnmount() {
+        locationStore.removeListener('change', this._locationStoreChangeHandler);
+    },
+
     render() {
-        var ruleName = locationStore.getData();
         /**
          * @type {RuleModel}
          */
         var rule = dataStore.getData().getRules().filter((rule) => {
-            return rule.getName() === ruleName;
+            return rule.getName() === this.state.ruleName;
         })[0];
         return (
             <PageView>

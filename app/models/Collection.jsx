@@ -15,6 +15,10 @@ export default class Collection {
         return this._items.filter(callback, context);
     }
 
+    reduce(callback, initialValue) {
+        return this._items.reduce(callback, initialValue);
+    }
+
     toJSON() {
         return this._items;
     }

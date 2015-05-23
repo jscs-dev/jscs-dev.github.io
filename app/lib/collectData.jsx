@@ -22,7 +22,7 @@ export default () => {
         getReadmeData(),
         processMarkdownFile('OVERVIEW.md'),
         processMarkdownFile('CONTRIBUTING.md'),
-        processMarkdownFile('CHANGELOG.md')
+        processMarkdownFile('CHANGELOG.md', true)
     ]).spread(function(ruleList, index, overview, contributing, changelog) {
         return new JscsModel({
             githubOrganization: config.githubOrganization,
@@ -141,9 +141,9 @@ function getReadmeData() {
     });
 }
 
-function processMarkdownFile(filename) {
+function processMarkdownFile(filename, forceToc) {
     return vowFs.read(jscsRoot + '/' + filename, 'utf8').then((content) => {
-        return processMarkdown(content);
+        return processMarkdown((forceToc ? '<!-- toc -->\n\n' : '') + content);
     });
 }
 
