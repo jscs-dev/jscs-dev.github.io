@@ -16,7 +16,6 @@
         display: block;
         border: 1px #D4D4D4 solid;
         border-radius: 3px;
-        color: #333;
         text-shadow: 0 1px 0 #fff;
         font-size: 11px;
         font-weight: bold;
@@ -25,5 +24,12 @@
         padding: 1px 5px 0;
         line-height: 17px;
         background: #fafafa linear-gradient(#fafafa, #eaeaea);
+        &, &:visited, &:visited:hover {
+            color: #333;
+        }
+        &:hover {
+            background: #ddd linear-gradient(#eee,#ddd);
+            border-color: #ccc;
+        }
     }
 }

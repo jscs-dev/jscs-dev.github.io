@@ -5,9 +5,9 @@
   "scripts": {
     "data": "node app/buildData.js",
     "test": "jscs app",
-    "publish": "sh checkout.sh && npm run build && sh publish.sh",
-    "start-dev": "sh checkout.sh && node app/server.js",
-    "build": "rm -Rf result && mkdir result && cp -R app/resources/* result && npm run build-js && node app/buildPages",
+    "publish": "sh tools/checkout.sh && npm run build && sh tools/publish.sh",
+    "start-dev": "sh tools/checkout.sh && node app/server.js",
+    "build": "sh tools/build.sh",
     "build-js": "webpack --config webpack-production.config.js --progress --profile --colors -p"
   },
   "author": "Marat Dulin <mdevils@yandex.ru>",
