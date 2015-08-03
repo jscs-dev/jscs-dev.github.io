@@ -28,8 +28,10 @@ export default React.createClass({
 
 var RuleListItem = React.createClass({
     _onClick(e) {
-        e.preventDefault();
-        navigation.navigateTo('rule', this.props.rule.getName());
+        if(e.button === 0 && !e.ctrlKey && !e.metaKey){ // Click without ctrl/cmd or middle button
+            e.preventDefault();
+            navigation.navigateTo('rule', this.props.rule.getName());
+        }
     },
 
     render() {
