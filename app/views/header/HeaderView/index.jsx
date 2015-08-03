@@ -8,8 +8,10 @@ import './style.styl';
 
 export default React.createClass({
     _onClick(e) {
-        e.preventDefault();
-        navigation.navigateTo('index');
+        if(e.button === 0 && !e.ctrlKey && !e.metaKey){ // Click without ctrl/cmd or middle button
+            e.preventDefault();
+            navigation.navigateTo('index');
+        }
     },
 
     render: function() {
