@@ -37,7 +37,13 @@ export default React.createClass({
                     </div>
                 </div>
                 <div><a href={rule.getSourceUrl()}>Rule source</a></div>
-                <div><a href={rule.getTestUrl()}>Test source</a></div>
+                {(() => {
+                    if (rule.getRenderTestLink()) {
+                        return (
+                            <div><a href={rule.getTestUrl()}>Test source</a></div>
+                        )
+                    }
+                })()}
             </PageView>
         )
     }

@@ -4,6 +4,7 @@ class RuleModel {
         this._description = data.description;
         this._shortDescription = data.shortDescription;
         this._sourceUrl = data.sourceUrl;
+        this._renderTestLink = data.renderTestLink;
         this._testUrl = data.testUrl;
         this._filename = data.filename;
     }
@@ -24,6 +25,10 @@ class RuleModel {
         return this._sourceUrl;
     }
 
+    getRenderTestLink() {
+        return this._renderTestLink;
+    }
+
     getTestUrl() {
         return this._testUrl;
     }
@@ -38,7 +43,9 @@ class RuleModel {
             description: this._description,
             shortDescription: this._shortDescription,
             sourceUrl: this._sourceUrl,
-            testUrl: this._testUrl
+            renderTestLink: this._renderTestLink,
+            testUrl: this._testUrl,
+            filename: this._filename
         };
     }
 }

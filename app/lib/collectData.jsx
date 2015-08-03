@@ -54,9 +54,10 @@ function buildRuleInfo(rulePath) {
     var projectUrl = 'https://github.com/' + config.githubOrganization + '/' + config.githubProject;
     var blobUrl = projectUrl + '/blob/master';
     var fileUrl = blobUrl + '/lib/rules/' + filename;
+    var testFilePath = buildRuleTestFilePath(filename);
     var testUrl = blobUrl + '/test/specs/rules/' + filename;
 
-    return vowFs.read(rulePath, 'utf8').then(function(fileContents) {
+    return vow.all([vowFs.read(rulePath, 'utf8'), vowFs.exists(testFilePath)]).spread(function(fileContents, hasTestFile) {
         var match = fileContents.match(/^\/\*\*([\s\S]*?)\*\//m);
         var description = '';
         if (match) {
@@ -84,10 +85,15 @@ function buildRuleInfo(rulePath) {
             description: description,
             shortDescription: shortDescription,
             sourceUrl: fileUrl,
+            renderTestLink: hasTestFile,
             testUrl: testUrl,
             filename: filename
         });
     });
+}
+
+function buildRuleTestFilePath(ruleFilename) {
+    return jscsRoot + '/test/specs/rules/' + ruleFilename;
 }
 
 function getAvailableRules() {
