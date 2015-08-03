@@ -55,7 +55,8 @@ class LocationStore extends EventEmitter {
                 typeof window.history.pushState !== 'undefined'
             ) {
                 try {
-                    window.history.pushState(null, this.getTitle(), newPath);
+                    window.history.replaceState({scroll: [window.scrollX, window.scrollY]}, document.title, window.location.pathname);
+                    window.history.pushState({scroll: [0, 0]}, this.getTitle(), newPath);
                 } catch (e) {} // Can fail on file:// origins
             }
             this.emit('change');

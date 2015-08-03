@@ -10,6 +10,12 @@ var RouteView = React.createClass({
 
     componentDidMount: function() {
         this._pageChangeHandler = (function() {
+            if (
+                typeof window !== 'undefined' &&
+                typeof window.history.state !== 'undefined'
+            ) {
+                window.scrollTo.apply(window, window.history.state.scroll);
+            }
             this.setState({
                 page: locationStore.getPage()
             });
