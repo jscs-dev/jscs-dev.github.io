@@ -12,6 +12,9 @@ class LocationStore extends EventEmitter {
         };
 
         if (typeof window !== 'undefined') {
+
+            this._state = parsePath(window.location.pathname);
+
             if (window.__locationState) {
                 this._state = processRewrites(window.__locationState, getCurrentWindowHash());
             }
