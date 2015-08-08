@@ -8,7 +8,6 @@ function renderHtml({title, content, dataPath, scriptPath, stylePath, locationSt
         .replace('{%dataPath%}', dataPath)
         .replace('{%scriptPath%}', scriptPath)
         .replace('{%stylePath%}', stylePath)
-        .replace('{%locationState%}', locationState)
         .replace('{%content%}', content);
 }
 
