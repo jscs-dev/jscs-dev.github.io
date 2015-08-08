@@ -1,29 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router';
 import MenuView from '../MenuView';
 import SocialButtonsView from '../SocialButtonsView';
-import locationStore from '../../../stores/locationStore';
-import navigation from '../../../actions/navigation';
 
 import './style.styl';
 
 export default React.createClass({
-    _onClick(e) {
-        if(e.button === 0 && !e.ctrlKey && !e.metaKey){ // Click without ctrl/cmd or middle button
-            e.preventDefault();
-            navigation.navigateTo('index');
-        }
-    },
-
     render: function() {
         return (
             <header className="header">
                 <div className="header__top">
-                    <a href={locationStore.renderPath('index')} onClick={this._onClick}>
+                    <Link to="index">
                         <div className="header__logo" />
                         <div className="header__project">
                             JavaScript Code Style
                         </div>
-                    </a>
+                    </Link>
                     <div className="header__menu">
                         <MenuView style="page" />
                     </div>
