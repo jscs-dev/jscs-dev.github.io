@@ -5,8 +5,6 @@ import React from 'react';
 import Router from 'react-router';
 import AppView from './views/AppView';
 import dataStore from './stores/dataStore';
-import navigation from './actions/navigation';
-import locationStore from './stores/locationStore';
 import collectData from './lib/collectData';
 
 export default collectData().then(/** @param {JscsModel} data */ function(data) {
