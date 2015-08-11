@@ -1,15 +1,12 @@
 import React from 'react';
-import { State } from 'react-router';
 import MenuView from '../../header/MenuView';
 import FooterView from '../../FooterView';
 import SocialButtonsView from '../../header/SocialButtonsView';
 import dataStore from '../../../stores/dataStore';
-import PageTitle from '../../../mixins/PageTitle';
 
 import './style.styl';
 
 export default React.createClass({
-    mixins: [State, PageTitle],
     render() {
         /** @type JscsModel */
         var data = dataStore.getData();

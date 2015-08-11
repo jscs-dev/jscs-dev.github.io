@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, State } from 'react-router';
+import locationStore from '../../../stores/locationStore';
+import navigation from '../../../actions/navigation';
 
 require('./style.styl');
 
@@ -26,16 +27,22 @@ var MenuView = React.createClass({
 
 var MenuItemView = React.createClass({
 
-    mixins: [State],
+    _onClick(e) {
+        if(e.button === 0 && !e.ctrlKey && !e.metaKey){ // Click without ctrl/cmd or middle button
+            e.preventDefault();
+            navigation.navigateTo(this.props.page);
+        }
+    },
 
     render() {
         var pages = this.props.activate ? this.props.activate : [this.props.page];
-        var isActive = pages.some((page) => this.isActive(page));
+        var isActive = pages.indexOf(locationStore.getPage()) !== -1;
         return (
-            <li className={'menu_' + this.props.style + '__item ' + (isActive ? ' _active' : '')}>
-                <Link to={this.props.page}>
+            <li className={'menu_' + this.props.style + '__item ' + (isActive ? ' _active' : '')}
+                onClick={this._onClick}>
+                <a href={locationStore.renderPath(this.props.page)}>
                     {this.props.children}
-                </Link>
+                </a>
             </li>
         )
     }
