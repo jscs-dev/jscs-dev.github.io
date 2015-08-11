@@ -1,10 +1,12 @@
 import React from 'react';
 import dataStore from '../../../stores/dataStore';
-import locationStore from '../../../stores/locationStore';
 import PageView from '../../PageView';
-import './style.styl'
+import './style.styl';
+import { State } from 'react-router';
+import PageTitle from '../../../mixins/PageTitle';
 
 export default React.createClass({
+    mixins: [State, PageTitle],
     render() {
         return (
             <PageView>
@@ -12,7 +14,7 @@ export default React.createClass({
                     See also:
                     <ul className="contributing__links">
                         <li>
-                            <a href={locationStore.renderPath('jscs', 'coverage')}>
+                            <a href="/jscs/coverage.html">
                                 JSCS Test Coverage Report
                             </a>
                         </li>

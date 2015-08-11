@@ -1,12 +1,15 @@
 import React from 'react';
+import { State } from 'react-router';
 import MenuView from '../../header/MenuView';
 import FooterView from '../../FooterView';
 import SocialButtonsView from '../../header/SocialButtonsView';
 import dataStore from '../../../stores/dataStore';
+import PageTitle from '../../../mixins/PageTitle';
 
 import './style.styl';
 
 export default React.createClass({
+    mixins: [State, PageTitle],
     render() {
         /** @type JscsModel */
         var data = dataStore.getData();
@@ -71,7 +74,7 @@ export default React.createClass({
                         <h2 className="index__maintainers-title">
                             Who develops JSCS?
                         </h2>
-                        <ul className="index__maintainers">
+                        <ul className="index__maintainers" id="maintainers">
                             {data.getMaintainers().map(
                                 /** @param {MaintainerModel} maintainer */
                                 (maintainer) => (
@@ -83,9 +86,6 @@ export default React.createClass({
                                             <a href={maintainer.getGithubLink()}>
                                                 {maintainer.getName()}
                                             </a>
-                                        </div>
-                                        <div className="index__maintainer-role">
-                                            {stickTerms(maintainer.getRole())}
                                         </div>
                                         <div className="index__maintainer-email">
                                             <a href={'mailto:' + maintainer.getEmail()}>

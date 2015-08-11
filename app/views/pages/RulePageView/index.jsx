@@ -1,33 +1,17 @@
 import React from 'react';
 import dataStore from '../../../stores/dataStore';
-import locationStore from '../../../stores/locationStore';
 import PageView from '../../PageView';
-import TitleView from '../../TitleView';
+import { State } from 'react-router';
+import PageTitle from '../../../mixins/PageTitle';
 
 export default React.createClass({
-    getInitialState() {
-        return {
-            ruleName: locationStore.getData()
-        };
-    },
-
-    componentDidMount() {
-        this._locationStoreChangeHandler = () => {
-            this.setState(this.getInitialState());
-        };
-        locationStore.on('change', this._locationStoreChangeHandler);
-    },
-
-    componentWillUnmount() {
-        locationStore.removeListener('change', this._locationStoreChangeHandler);
-    },
-
+    mixins: [State, PageTitle],
     render() {
         /**
          * @type {RuleModel}
          */
         var rule = dataStore.getData().getRules().filter((rule) => {
-            return rule.getName() === this.state.ruleName;
+            return rule.getName() === this.props.params.ruleName;
         })[0];
         return (
             <PageView>

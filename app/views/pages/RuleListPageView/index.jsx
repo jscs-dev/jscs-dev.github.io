@@ -1,19 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router';
 import dataStore from '../../../stores/dataStore';
-import locationStore from '../../../stores/locationStore';
-import navigation from '../../../actions/navigation';
 import PageView from '../../PageView';
 import TitleView from '../../TitleView';
+import { State } from 'react-router';
+import PageTitle from '../../../mixins/PageTitle';
 
 import './style.styl';
 
 export default React.createClass({
-    getInitialState: function() {
+    mixins: [State, PageTitle],
+    getInitialState() {
         return {
             search: ''
         };
     },
-    componentDidMount: function() {
+    componentDidMount() {
         React.findDOMNode(this.refs.search).focus();
     },
     onSearchChange() {
@@ -51,21 +53,13 @@ export default React.createClass({
 });
 
 var RuleListItem = React.createClass({
-    _onClick(e) {
-        if(e.button === 0 && !e.ctrlKey && !e.metaKey){ // Click without ctrl/cmd or middle button
-            e.preventDefault();
-            navigation.navigateTo('rule', this.props.rule.getName());
-        }
-    },
 
     render() {
         return (
             <li className="rule-list__item">
-                <a
-                    href={locationStore.renderPath('rule', this.props.rule.getName())}
-                    onClick={this._onClick}>
+                <Link to="rule" params={{ruleName: this.props.rule.getName()}}>
                     {this.props.rule.getName()}
-                </a>
+                </Link>
                 <div className="rule-list__item-description">
                     <div className="markdown"
                          dangerouslySetInnerHTML={{__html: this.props.rule.getShortDescription()}}>
