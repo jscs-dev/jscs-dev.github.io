@@ -74,7 +74,7 @@ export default React.createClass({
                         <h2 className="index__maintainers-title">
                             Who develops JSCS?
                         </h2>
-                        <ul className="index__maintainers">
+                        <ul className="index__maintainers" id="maintainers">
                             {data.getMaintainers().map(
                                 /** @param {MaintainerModel} maintainer */
                                 (maintainer) => (
