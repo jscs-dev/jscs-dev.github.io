@@ -29,7 +29,7 @@ export default collectData().then(/** @param {JscsModel} data */ function(data) 
 
     pathsToRender.forEach(function(filePath) {
 
-        Router.run(AppView, '/' + filePath, function (Handler, state) {
+        Router.run(AppView, '/' + (filePath === 'index' ? '' : filePath), function (Handler, state) {
             var html = renderHtml({
                 title: 'JSCS',
                 content: React.renderToString(<Handler/>),
@@ -45,6 +45,7 @@ export default collectData().then(/** @param {JscsModel} data */ function(data) 
             }
 
             fs.writeFileSync(filename, html);
+            console.log(filename);
         });
 
     });
