@@ -87,9 +87,6 @@ export default React.createClass({
                                                 {maintainer.getName()}
                                             </a>
                                         </div>
-                                        <div className="index__maintainer-role">
-                                            {stickTerms(maintainer.getRole())}
-                                        </div>
                                         <div className="index__maintainer-email">
                                             <a href={'mailto:' + maintainer.getEmail()}>
                                                 {maintainer.getEmail()}

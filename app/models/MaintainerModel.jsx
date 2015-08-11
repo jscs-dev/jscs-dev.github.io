@@ -3,7 +3,6 @@ export default class MaintainerModel {
         this._name = name;
         this._email = email;
         this._githubUsername = githubUsername;
-        this._role = role;
     }
 
     getName() {
@@ -18,10 +17,6 @@ export default class MaintainerModel {
         return this._githubUsername;
     }
 
-    getRole() {
-        return this._role;
-    }
-
     getGithubImageLink() {
         return 'https://avatars.githubusercontent.com/' + this.getGithubUsername();
     }
@@ -34,8 +29,7 @@ export default class MaintainerModel {
         return {
             name: this._name,
             email: this._email,
-            githubUsername: this._githubUsername,
-            role: this._role
+            githubUsername: this._githubUsername
         };
     }
 };
