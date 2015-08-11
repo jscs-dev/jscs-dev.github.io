@@ -5,22 +5,31 @@ import PageView from '../../PageView';
 import TitleView from '../../TitleView';
 import { State } from 'react-router';
 import PageTitle from '../../../mixins/PageTitle';
+import { Navigation } from 'react-router';
 
 import './style.styl';
 
 export default React.createClass({
-    mixins: [State, PageTitle],
+    mixins: [State, PageTitle, Navigation],
     getInitialState() {
+        var search = '';
+
+        if (this.props.params.filter) {
+            search = new RegExp(this.props.params.filter, 'i')
+        }
+
         return {
-            search: ''
-        };
+            search: search
+        }
     },
     componentDidMount() {
         React.findDOMNode(this.refs.search).focus();
     },
     onSearchChange() {
+        var query = React.findDOMNode(this.refs.search).value;
+        this.transitionTo('/rules/' + query)
         this.setState({
-            search: new RegExp(React.findDOMNode(this.refs.search).value, 'i')
+            search: new RegExp(query, 'i')
         });
         this.render();
     },
@@ -33,6 +42,7 @@ export default React.createClass({
                     className="search-bar"
                     ref="search"
                     placeholder="Filter: e.g, 'MultipleSpaces'..."
+                    defaultValue={this.props.params.filter}
                     onChange={this.onSearchChange}/>
                 <ul className="rule-list">
                     {dataStore.getData().getRules()
