@@ -21,7 +21,7 @@ export default collectData().then(/** @param {JscsModel} data */ function(data) 
         'index',
         'overview',
         'contributing',
-        'rules',
+        'rules/',
         'changelog'
     ].concat(data.getRules().map(/** @param {RuleModel} rule */ function(rule) {
         return 'rule/' + rule.getName();
