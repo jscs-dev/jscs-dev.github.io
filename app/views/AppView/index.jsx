@@ -32,7 +32,7 @@ var NotFound = React.createClass({
 var routes = (
     <Route handler={App}>
         <Route name="index" path="/" handler={IndexPageView} />
-        <Route name="rules" handler={RuleListPageView} />
+        <Route name="rules" path="rules/:filter?" handler={RuleListPageView} />
         <Route name="rule" path="rule/:ruleName" handler={RulePageView} />
         <Route name="overview" handler={OverviewPageView} />
         <Route name="contributing" handler={ContributingPageView} />
