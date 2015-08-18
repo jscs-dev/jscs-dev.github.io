@@ -10,8 +10,10 @@ export default React.createClass({
         /**
          * @type {RuleModel}
          */
+        var ruleName = this.props.params.ruleName;
+        ruleName = ruleName.replace(/\.html$/, '');
         var rule = dataStore.getData().getRules().filter((rule) => {
-            return rule.getName() === this.props.params.ruleName;
+            return rule.getName() === ruleName;
         })[0];
         return (
             <PageView>
