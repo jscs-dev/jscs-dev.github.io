@@ -13,8 +13,8 @@ export default React.createClass({
     getInitialState() {
         var search = '';
 
-        if (this.props.params.filter) {
-            search = new RegExp(this.props.params.filter, 'i')
+        if (this.props.query.q) {
+            search = new RegExp(this.props.query.q, 'i')
         }
 
         return {
@@ -26,7 +26,7 @@ export default React.createClass({
     },
     onSearchChange() {
         var query = React.findDOMNode(this.refs.search).value;
-        this.transitionTo('/rules/' + query)
+        this.transitionTo('/rules?q=' + query)
         this.setState({
             search: new RegExp(query, 'i')
         });
@@ -42,7 +42,7 @@ export default React.createClass({
                     className="search-bar"
                     ref="search"
                     placeholder="Filter: e.g, 'MultipleSpaces'..."
-                    defaultValue={this.props.params.filter}
+                    defaultValue={this.props.query.q}
                     onChange={this.onSearchChange}/>
                 <ul className="rule-list">
                     {dataStore.getData().getRules()
