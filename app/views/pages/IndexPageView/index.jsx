@@ -45,6 +45,10 @@ export default React.createClass({
                         dangerouslySetInnerHTML={{__html: index.getIntroduction()}}>
                     </div>
 
+                    <div className="index__info">
+                        <pre>npm install jscs -g</pre>
+                    </div>
+
                     <ul className="index__badges">
                         {index.getBadges().map(processBadge)}
                     </ul>
@@ -55,6 +59,73 @@ export default React.createClass({
                 </section>
 
                 <section className="index__content">
+                    <div className="index__social">
+                        <h2 className="index__feature-title">
+                            JSCS checks your JavaScript
+                        </h2>
+                        <pre className="index__feature-main">
+                            jscs file.js --preset=airbnb
+                        </pre>
+                        <div>
+                            JSCS has built-in presets to check your code against.
+                            Or you can create your own and share them as npm packages.
+                        </div>
+                        <div className="index__feature-container">
+                            <div className="index__file" />
+                            <div className="index__output" />
+                        </div>
+                    </div>
+                    <div className="index__social">
+                        <h2 className="index__feature-title">
+                            Support for ES2015, JSX, Flow, and more
+                        </h2>
+                        <pre className="index__feature-main">
+                            jscs src --esnext
+                        </pre>
+                        <div>
+                            JSCS can lint any valid Babel code.
+                        </div>
+                        <div className="index__feature-container">
+                            <div className="index__esnext" />
+                        </div>
+                    </div>
+                    <div className="index__social">
+                        <h2 className="index__feature-title">
+                            Automatically fix your errors
+                        </h2>
+                        <pre className="index__feature-main">
+                            jscs src --fix
+                        </pre>
+                        <div className="index__feature-container">
+                            <div className="index__autofixbefore" />
+                            <div className="index__autofixafter" />
+                        </div>
+                    </div>
+                    <div className="index__social">
+                        <h2 className="index__feature-title">
+                            Automatically create your configuration file
+                        </h2>
+                        <pre className="index__feature-main">
+                            jscs --auto-configure src
+                        </pre>
+                        <div>
+                            Base your own config off of the closet preset to your own style.
+                        </div>
+                        <div className="index__feature-container">
+                            <div className="index__autoconfigure" />
+                        </div>
+                    </div>
+                    <div className="index__social">
+                        <h2 className="index__feature-title">
+                            Use JSCS with your favorite tools
+                        </h2>
+                        <div>
+                            Support for grunt, gulp, sublime, atom, etc
+                        </div>
+                        <div className="index__feature-container">
+                            <div className="index__editor" />
+                        </div>
+                    </div>
                     <div className="index__social">
                         <h2 className="index__users-title">
                             Who uses JSCS?
