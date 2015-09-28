@@ -6,6 +6,71 @@
         text-align: center;
     }
 
+    &__feature-main {
+        font-size: 25px;
+    }
+
+    &__feature-container {
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-justify-content: space-around;
+                justify-content: space-around;
+        margin: 10px 0;
+    }
+
+    &__file {
+        -webkit-align-self: center;
+                align-self: center;
+        width: 315px;
+        height: 110px;
+        background: url(./file.png);
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+
+    &__output {
+        width: 582px;
+        height: 290px;
+        background: url(./jscs-output.png);
+        background-size: cover;
+    }
+
+    &__autoconfigure {
+        width: 582px;
+        height: 330px;
+        background: url(./autoconfigure.png);
+        background-size: cover;
+    }
+
+    &__esnext {
+        width: 735px;
+        height: 290px;
+        background: url(./file-esnext.png);
+        background-size: cover;
+    }
+
+    &__editor {
+        width: 582px;
+        height: 330px;
+        background: url(./editor.png);
+        background-size: cover;
+    }
+
+    &__autofixbefore {
+        width: 490px;
+        height: 260px;
+        background: url(./autofix-before.png);
+        background-size: cover;
+        margin-bottom: 10px;
+    }
+
+    &__autofixafter {
+        width: 490px;
+        height: 260px;
+        background: url(./autofix-after.png);
+        background-size: cover;
+    }
+
     &__logo {
         display: inline-block;
         width: 149px;
@@ -58,7 +123,7 @@
         box-sizing: border-box;
     }
 
-    &__users-title, &__maintainers-title {
+    &__feature-title, &__users-title, &__maintainers-title {
         color: #B3A436;
         font-weight: normal;
         font-size: 32px;
