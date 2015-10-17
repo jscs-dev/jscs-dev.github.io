@@ -19,7 +19,7 @@ require('./buildData').then(function() {
         res.sendFile(path.join(__dirname, '..', '/index.html'));
     });
 
-    server.listen(3000, 'localhost', function(err, result) {
+    server.listen(3000, 'localhost', function(err) {
         if (err) {
             console.log(err);
         }
