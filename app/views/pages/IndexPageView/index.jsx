@@ -33,7 +33,7 @@ export default React.createClass({
                     <div className="index__logo" />
 
                     <h1 className="index__title">
-                        {index.getTitle()}
+                        {`${index.getTitle()} (${data.getVersion()})`}
                     </h1>
 
                     <nav className="index__menu">
