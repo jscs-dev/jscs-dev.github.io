@@ -41,7 +41,8 @@ export default () => {
             index: new IndexModel(index),
             overview,
             contributing,
-            changelog
+            changelog,
+            version: packageInfo.version
         });
     });
 };

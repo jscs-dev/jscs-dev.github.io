@@ -15,7 +15,8 @@ export default class JscsModel {
         maintainers,
         overview,
         contributing,
-        changelog
+        changelog,
+        version
     }) {
         this._githubOrganization = githubOrganization;
         this._githubProject = githubProject;
@@ -27,6 +28,7 @@ export default class JscsModel {
         this._overview = overview;
         this._contributing = contributing;
         this._changelog = changelog;
+        this._version = version;
     }
 
     getIndex() {
@@ -69,6 +71,10 @@ export default class JscsModel {
         return this._changelog;
     }
 
+    getVersion() {
+        return this._version;
+    }
+
     toJSON() {
         return {
             githubOrganization: this._githubOrganization,
@@ -80,7 +86,8 @@ export default class JscsModel {
             maintainers: this._maintainers,
             overview: this._overview,
             contributing: this._contributing,
-            changelog: this._changelog
+            changelog: this._changelog,
+            version: this._version
         };
     }
 };
@@ -100,6 +107,7 @@ JscsModel.fromJSON = function(data) {
         })),
         overview: data.overview,
         contributing: data.contributing,
-        changelog: data.changelog
+        changelog: data.changelog,
+        version: data.version
     });
 };
