@@ -117,8 +117,8 @@ function getReadmeData() {
             return '';
         }).trim();
         var introBits = intro.split('\n');
-        var title = stripHtml(processMarkdown(introBits.shift()));
-        var introduction = stripHtml(processMarkdown(introBits.join('\n')));
+        var title = processMarkdown(introBits.shift());
+        var introduction = processMarkdown(introBits.join('\n'));
 
         var users = [];
 
