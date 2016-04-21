@@ -31,19 +31,21 @@ export default React.createClass({
             <div className="index">
                 <section className="index__intro">
                     <div className="index__logo" />
+                    <div className="index__eslint" />
 
-                    <h1 className="index__title">
-                        {index.getTitle()}
+                    <h1
+                        className="index__title"
+                        dangerouslySetInnerHTML={{__html: index.getTitle()}}>
                     </h1>
-
-                    <nav className="index__menu">
-                        <MenuView style="index" />
-                    </nav>
 
                     <div
                         className="index__info"
                         dangerouslySetInnerHTML={{__html: index.getIntroduction()}}>
                     </div>
+
+                    <nav className="index__menu">
+                        <MenuView style="index" />
+                    </nav>
 
                     <div className="index__info">
                         <pre>npm install jscs -g</pre>
