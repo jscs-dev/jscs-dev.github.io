@@ -66,7 +66,7 @@ export default React.createClass({
                         </pre>
                         <h3 className="index__feature-sign">
                             JSCS has built-in presets to check your code against.
-                            Or you can create your own and share them as npm packages.
+                            Or you can create your own and share them as npm packages
                         </h3>
                         <div className="index__feature-container">
                             <div className="index__file" />
