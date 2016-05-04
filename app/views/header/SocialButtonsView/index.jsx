@@ -30,7 +30,7 @@ export default React.createClass({
                         src={twitterButtonUrl}
                         allowTransparency="true"
                         frameBorder="0"
-                        width="59"
+                        width="65"
                         scrolling="no"
                         height="20"></iframe>
                 </li>

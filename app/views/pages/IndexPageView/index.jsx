@@ -47,10 +47,6 @@ export default React.createClass({
                         <MenuView style="index" />
                     </nav>
 
-                    <div className="index__info">
-                        <pre>npm install jscs -g</pre>
-                    </div>
-
                     <ul className="index__badges">
                         {index.getBadges().map(processBadge)}
                     </ul>
@@ -68,10 +64,10 @@ export default React.createClass({
                         <pre className="index__feature-main">
                             jscs file.js --preset=airbnb
                         </pre>
-                        <div>
+                        <h3 className="index__feature-sign">
                             JSCS has built-in presets to check your code against.
                             Or you can create your own and share them as npm packages.
-                        </div>
+                        </h3>
                         <div className="index__feature-container">
                             <div className="index__file" />
                             <div className="index__output" />
@@ -81,12 +77,9 @@ export default React.createClass({
                         <h2 className="index__feature-title">
                             Support for ES2015, JSX, Flow, and more
                         </h2>
-                        <pre className="index__feature-main">
-                            jscs src --esnext
-                        </pre>
-                        <div>
-                            JSCS can lint any valid Babel code.
-                        </div>
+                        <h3 className="index__feature-sign">
+                            JSCS can lint any valid ES6/7 code
+                        </h3>
                         <div className="index__feature-container">
                             <div className="index__esnext" />
                         </div>
@@ -110,9 +103,9 @@ export default React.createClass({
                         <pre className="index__feature-main">
                             jscs --auto-configure src
                         </pre>
-                        <div>
-                            Base your own config off of the closet preset to your own style.
-                        </div>
+                        <h3 className="index__feature-sign">
+                            Base your own config off of the closet preset to your own style
+                        </h3>
                         <div className="index__feature-container">
                             <div className="index__autoconfigure" />
                         </div>
@@ -121,31 +114,16 @@ export default React.createClass({
                         <h2 className="index__feature-title">
                             Use JSCS with your favorite tools
                         </h2>
-                        <div>
+                        <h3 className="index__feature-sign">
                             Support for grunt, gulp, sublime, atom, etc
-                        </div>
+                        </h3>
                         <div className="index__feature-container">
                             <div className="index__editor" />
                         </div>
                     </div>
                     <div className="index__social">
-                        <h2 className="index__users-title">
-                            Who uses JSCS?
-                        </h2>
-                        <ul className="index__users">
-                            {index.getUsers().map((user) => (
-                                <li className="index__user">
-                                    <a href={user.getUrl()} className="index__user-link">
-                                        {user.getName()}
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                        <div className="index__users-other">
-                            and many other awesome projects
-                        </div>
                         <h2 className="index__maintainers-title">
-                            Who develops JSCS?
+                            Who developed JSCS?
                         </h2>
                         <ul className="index__maintainers" id="maintainers">
                             {data.getMaintainers().map(
