@@ -107,15 +107,17 @@ function getAvailableRules() {
 
 function getReadmeData() {
     return vowFs.read(jscsRoot + '/README.md', 'utf8').then((readme) => {
-        var introEnd = readme.indexOf('####');
+        var introEnd = readme.indexOf('<!-- intro-end -->');
         var intro = readme.substr(0, introEnd);
         var info = readme.substr(introEnd);
 
         var badges = [];
+
         intro = intro.replace(/\[\!\[([^\]]+)\]\(([^\)]+)\)\]\(([^\)]+)\)/g, function(s, title, imageUrl, url) {
             badges.push(new BadgeModel({title, imageUrl, url}));
             return '';
         }).trim();
+
         var introBits = intro.split('\n');
         var title = processMarkdown(introBits.shift());
         var introduction = processMarkdown(introBits.join('\n'));
