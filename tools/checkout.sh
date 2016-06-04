@@ -13,5 +13,4 @@ git checkout "$LAST_TAG";
 
 npm install
 
-npm run browserify
 npm run coverage-html
