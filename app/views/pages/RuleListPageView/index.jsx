@@ -6,19 +6,32 @@ import TitleView from '../../TitleView';
 import { State } from 'react-router';
 import PageTitle from '../../../mixins/PageTitle';
 import { Navigation } from 'react-router';
+import fuzzy from 'fuzzy';
 
 import './style.styl';
 
+const fuzzyNameOptions = {
+    pre: '<em>',
+    post: '</em>',
+    extract: function(rule) {
+        return rule.getName();
+    }
+};
+
+const fuzzySummaryOptions = {
+    pre: '<em>',
+    post: '</em>',
+    extract: function(rule) {
+        return rule.getShortDescription();
+    }
+};
+
 export default React.createClass({
     getInitialState() {
-        var search = '';
-
-        if (this.props.query.q) {
-            search = new RegExp(this.props.query.q, 'i')
-        }
+        var query = this.props.query.q;
 
         return {
-            search: search
+            query: this.props.query.q
         }
     },
     componentDidMount() {
@@ -28,12 +41,23 @@ export default React.createClass({
         var query = React.findDOMNode(this.refs.search).value;
         this.transitionTo('/rules?q=' + query)
         this.setState({
-            search: new RegExp(query, 'i')
+            query
         });
         this.render();
     },
     mixins: [State, PageTitle, Navigation],
     render() {
+        var rules = dataStore.getData().getRules()
+            .filter(rule => Boolean(rule.getShortDescription()));
+        var nameMatches = [];
+        var summaryMatches = [];
+        if (this.state.query) {
+            nameMatches = fuzzy.filter(this.state.query, rules, fuzzyNameOptions);
+            var nameMatchedRules = nameMatches.map(match => match.original);
+            var restRules = rules.filter(rule => nameMatchedRules.indexOf(rule) === -1);
+            summaryMatches = fuzzy.filter(this.state.query, restRules, fuzzySummaryOptions);
+        }
+
         return (
             <PageView>
                 <TitleView>Rules</TitleView>
@@ -45,17 +69,21 @@ export default React.createClass({
                     defaultValue={this.props.query.q}
                     onChange={this.onSearchChange}/>
                 <ul className="rule-list">
-                    {dataStore.getData().getRules()
-                        .filter((rule) => Boolean(rule.getShortDescription()))
-                        .filter((rule) => {
-                            return rule.getShortDescription().match(this.state.search) ||
-                                rule.getName().match(this.state.search);
-                        })
-                        .map((rule) => {
+                    {
+                        nameMatches.map((match, key) => {
                             return <RuleListItem
-                                key={rule.getFilename()}
-                                rule={rule} />;
-                        })}
+                                key={key}
+                                rule={match.original}
+                                name={match.string} />;
+                        })
+                    }
+                    {
+                        summaryMatches.map((match, key) => {
+                            return <RuleListItem
+                                key={key}
+                                rule={match.original} />;
+                        })
+                    }
                 </ul>
             </PageView>
         )
@@ -67,8 +95,9 @@ var RuleListItem = React.createClass({
     render() {
         return (
             <li className="rule-list__item">
-                <Link to="rule" params={{ruleName: this.props.rule.getName()}}>
-                    {this.props.rule.getName()}
+                <Link to="rule"
+                    params={{ruleName: this.props.rule.getName()}}
+                    dangerouslySetInnerHTML={{__html: this.props.name || this.props.rule.getName()}}>
                 </Link>
                 <div className="rule-list__item-description">
                     <div className="markdown"
